@@ -16,10 +16,10 @@ public:
 		_transform = new Transform();
 		_renderer = new ImageRenderer(_transform, texturePath, ofsset, size);
 		Vector2 randomPosition = Vector2(rand() % RM->WINDOW_WIDTH, rand() % RM->WINDOW_HEIGHT);
-		_transform->position = randomPosition;
+		_transform->position = { 100, 100 };
 		_transform->scale = Vector2(0.5f, 0.5f);
 		_transform->rotation = 0.f;
-		_physics->SetVelocity({ 100000, 10000 });
+		
 	}
 	void Update() override;
 	void Render() override;

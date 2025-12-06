@@ -1,43 +1,31 @@
 #include "TestObject.h"
-
+#include <iostream>
 
 
 void Player::Update()
 {
-
 		bool hasMoved = false;
-		Vector2 vel = { 0, 0 };
 		if (IM->GetEvent(SDLK_S, HOLD))
-		{
-			vel.y = 100.f;
-			hasMoved = true;
-		}
-
+			{
+			_transform->position = { _transform->position.x ,_transform->position.y + 5.f };
+			}
 		if (IM->GetEvent(SDLK_W, HOLD))
 		{
-			vel.y = -100.f;
-			hasMoved = true;
-
+			_transform->position = { _transform->position.x ,_transform->position.y - 5.f };
 		}
-
 		if (IM->GetEvent(SDLK_A, HOLD))
 		{
-			vel.x = -100.f;
-			hasMoved = true;
-
+			_transform->position = { _transform->position.x - 5.f  ,_transform->position.y};
 		}
-
 		if (IM->GetEvent(SDLK_D, HOLD))
 		{
-			vel.x = 100.f;
-			hasMoved = true;
-
+			_transform->position = { _transform->position.x + 5.f  ,_transform->position.y};
 		}
+
 
 		
 
 		std::cout << _transform->position.x << " " << _transform->position.y << "\n";
-
 
 		Object::Update();
 
