@@ -7,7 +7,7 @@
 void Bullet::Update()
 {
 
-	_transform->position = { _transform->position.x + 5.f  ,_transform->position.y };
+	_transform->position = { _transform->position.x + 20.f  ,_transform->position.y };
 
 	Object::Update();
 
