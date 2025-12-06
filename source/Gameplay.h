@@ -1,12 +1,8 @@
 #pragma once
 #include "Scene.h"
-#include "TestObject.h"
 #include "Spawner.h"
 #include "TextObject.h"
-
-
-
-
+#include "TestObject.h"
 
 class Gameplay : public Scene
 {

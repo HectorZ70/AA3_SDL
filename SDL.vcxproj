@@ -20,6 +20,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="source\AABB.cpp" />
+    <ClCompile Include="source\Bullet.cpp" />
     <ClCompile Include="source\Game.cpp" />
     <ClCompile Include="source\Gameplay.cpp" />
     <ClCompile Include="source\ImageRenderer.cpp" />
@@ -37,6 +38,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\AABB.h" />
+    <ClInclude Include="source\Bullet.h" />
     <ClInclude Include="source\Game.h" />
     <ClInclude Include="source\Gameplay.h" />
     <ClInclude Include="source\ImageObject.h" />

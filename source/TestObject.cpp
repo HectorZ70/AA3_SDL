@@ -1,5 +1,9 @@
 #include "TestObject.h"
+#include "Spawner.h"
+
+
 #include <iostream>
+#include "Bullet.h"
 
 
 void Player::Update()
@@ -21,7 +25,10 @@ void Player::Update()
 		{
 			_transform->position = { _transform->position.x + 5.f  ,_transform->position.y};
 		}
-
+		if (IM->GetEvent(SDLK_J, DOWN))
+		{
+			Player::Shoot();
+		}
 
 		
 
@@ -34,4 +41,10 @@ void Player::Update()
 void Player::Render()
 {
 	_renderer->Render();
+}
+
+void Player::Shoot()
+{
+	Bullet* bullet = new Bullet(_transform->position);
+	SPAWNER.SpawnObject(bullet);
 }
