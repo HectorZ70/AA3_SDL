@@ -1,8 +1,10 @@
 #pragma once
 #include "Scene.h"
-#include "TestObject.h"
+#include "Bullet.h"
 #include "Spawner.h"
 #include "TextObject.h"
+#include "TestObject.h"
+
 
 
 
@@ -15,8 +17,11 @@ public:
 
 	void OnEnter() override
 	{
+		Bullet* bullet = new Bullet;
 		Player* player = new Player;
+		SPAWNER.SpawnObject(bullet);
 		SPAWNER.SpawnObject(player);
+		bullet->Render();
 		player->Render();
 
 	}
