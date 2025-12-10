@@ -20,6 +20,9 @@ public:
 		_transform->rotation = 0.f;
 
 	}
+	
+	~Bullet();
+
 	void Update() override;
 	void Render() override;
 

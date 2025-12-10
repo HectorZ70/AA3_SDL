@@ -27,11 +27,9 @@ void Player::Update()
 		if (IM->GetEvent(SDLK_J, DOWN))
 		{
 			Player::Shoot();
-		}
+		}	
 
-		
-
-		std::cout << _transform->position.x << " " << _transform->position.y << "\n";
+		//std::cout << _transform->position.x << " " << _transform->position.y << "\n";
 
 		Object::Update();
 

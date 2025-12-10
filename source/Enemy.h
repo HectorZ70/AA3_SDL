@@ -7,6 +7,9 @@
 class Enemy : public Object
 {
 public:
+	float radius;
+	float speed;
+	float angle;
 	Enemy(float posX, float posY) : Object()
 	{
 		std::string texturePath = "resources/image.png";
@@ -18,7 +21,9 @@ public:
 		_transform->position = { posX, posY };
 		_transform->scale = Vector2(0.5f, 0.5f);
 		_transform->rotation = 0.f;
-
+		radius = 100.f;
+		speed = 10.f;
+		angle = 90.f;
 	}
 
 	void Update() override;
