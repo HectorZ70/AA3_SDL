@@ -3,6 +3,8 @@
 #include "Spawner.h"
 #include "TextObject.h"
 #include "TestObject.h"
+#include "Enemy.h"
+
 
 class Gameplay : public Scene
 {
@@ -11,8 +13,14 @@ public:
 
 	void OnEnter() override
 	{
+
+		Enemy* enemy = new Enemy(200.f, 200.f);
 		Player* player = new Player;
+
+		SPAWNER.SpawnObject(enemy);
 		SPAWNER.SpawnObject(player);
+
+		enemy->Render();
 		player->Render();
 
 	}
