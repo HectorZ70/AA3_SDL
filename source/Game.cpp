@@ -4,6 +4,7 @@
 #include "InputManager.h"
 #include "SceneManager.h"
 #include "Gameplay.h"
+#include "MainMenu.h"
 
 #include "RenderManager.h"
 
@@ -15,9 +16,10 @@ void Game::Init()
 	RM->LoadFont(FONT_PATH);
 
 	//Carga de escenas
+	assert(SM.AddScene("MainMenu", new MainMenu()));
 	assert(SM.AddScene("Gameplay", new Gameplay())); //DONA ERROR
-	
-	assert(SM.InitFirstScene("Gameplay"));
+
+	assert(SM.InitFirstScene("MainMenu"));
 
 	_isRunning = true;
 }
@@ -46,9 +48,9 @@ void Game::Update()
 
 void Game::Render()
 {
-	RM -> ClearScreen();
+	RM->ClearScreen();
 	SM.GetCurrentScene()->Render();
-	RM -> RenderScreen();
+	RM->RenderScreen();
 
 }
 

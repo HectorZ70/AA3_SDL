@@ -15,8 +15,6 @@ void Enemy::Update()
 	else if (finishEnter == true && finishCircle == true)
 		Enemy::ExitOutScene();
 
-
-
 	Object::Update();
 }
 

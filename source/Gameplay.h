@@ -22,7 +22,6 @@ public:
 
 		enemy->Render();
 		player->Render();
-
 	}
 
 	void OnExit() { Scene::OnExit(); }
