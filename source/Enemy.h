@@ -6,10 +6,18 @@
 
 class Enemy : public Object
 {
+	bool finishEnter = false;
+	bool finishCircle = false;
+	int numberOfTimes = 0;
 public:
+	Vector2 center;
 	float radius;
 	float speed;
 	float angle;
+
+	float oldPosY;
+
+
 	Enemy(float posX, float posY) : Object()
 	{
 		std::string texturePath = "resources/image.png";
@@ -21,11 +29,18 @@ public:
 		_transform->position = { posX, posY };
 		_transform->scale = Vector2(0.5f, 0.5f);
 		_transform->rotation = 0.f;
+		center = { posX, posY };
+		oldPosY = posY;
 		radius = 100.f;
-		speed = 10.f;
-		angle = 90.f;
+		speed = 0.05f;
+		angle = 0.f;
 	}
 
 	void Update() override;
 	void Render() override;
+
+	void MoveInCircles();
+	void EnterInScene(int targetPosX);
+	void ExitOutScene();
+
 };

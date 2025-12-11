@@ -14,7 +14,7 @@ public:
 	void OnEnter() override
 	{
 
-		Enemy* enemy = new Enemy(200.f, 200.f);
+		Enemy* enemy = new Enemy(1000.f, 300.f);
 		Player* player = new Player;
 
 		SPAWNER.SpawnObject(enemy);
