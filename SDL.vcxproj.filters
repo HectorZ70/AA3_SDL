@@ -66,6 +66,9 @@
     <ClCompile Include="source\TextRenderer.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
+    <ClCompile Include="source\Button.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\RenderManager.h">
@@ -133,9 +136,6 @@
     </ClInclude>
     <ClInclude Include="source\MainMenu.h">
       <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="source\Button.cpp">
-      <Filter>Archivos de origen</Filter>
     </ClInclude>
     <ClInclude Include="source\Button.h">
       <Filter>Archivos de encabezado</Filter>

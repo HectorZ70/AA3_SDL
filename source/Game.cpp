@@ -34,6 +34,7 @@ void Game::InitSDL()
 
 void Game::CreateWindowAndRenderer()
 {
+
 }
 
 void Game::HandelEvents()

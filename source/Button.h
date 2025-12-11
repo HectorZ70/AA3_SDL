@@ -1,3 +1,4 @@
+#pragma once
 #include "ImageObject.h"
 #include <functional>
 
