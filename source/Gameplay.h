@@ -4,6 +4,7 @@
 #include "TextObject.h"
 #include "TestObject.h"
 #include "Enemy.h"
+#include "Circler.h"
 #include "Background.h"
 
 
@@ -16,7 +17,7 @@ public:
 	{
 		Background* backgroundUp = new Background(RM->WINDOW_HEIGHT);
 		Background* backgroundDown = new Background(0);
-		Enemy* enemy = new Enemy(1000.f, 300.f);
+		Circler* enemy = new Circler(1000.f, 300.f);
 		Player* player = new Player;
 
 		SPAWNER.SpawnObject(backgroundUp);
