@@ -69,6 +69,9 @@
     <ClCompile Include="source\Button.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
+    <ClCompile Include="source\Background.cpp">
+      <Filter>Archivos de encabezado</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\RenderManager.h">
@@ -138,6 +141,9 @@
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
     <ClInclude Include="source\Button.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Background.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
   </ItemGroup>
