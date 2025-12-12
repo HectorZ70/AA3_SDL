@@ -23,6 +23,7 @@ public:
 	}
 	void Update() override;
 	void Render() override;
+	void Move();
 	void Shoot();
 
 };

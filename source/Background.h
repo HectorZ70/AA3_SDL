@@ -15,7 +15,7 @@ public:
 		_renderer = new ImageRenderer(_transform, texturePath, ofsset, size);
 		float xPos = RM->WINDOW_WIDTH;
 
-		_transform->position = { xPos , yPos / 2 };
+		_transform->position = { xPos , yPos };
 		_transform->rotation = 0.f;
 		_transform->size = size;
 	}
