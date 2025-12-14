@@ -6,6 +6,7 @@
 #include "Enemy.h"
 #include "Circler.h"
 #include "Background.h"
+#include "HorizontalMedusa.h"
 
 
 class Gameplay : public Scene
@@ -15,6 +16,7 @@ public:
 
 	void OnEnter() override
 	{
+		HorizontalMedusa* horizontalMedusa = new HorizontalMedusa(1000, 100);
 		Background* backgroundUp = new Background(RM->WINDOW_HEIGHT);
 		Background* backgroundDown = new Background(0);
 		Circler* enemy = new Circler(1000.f, 300.f);
@@ -22,6 +24,7 @@ public:
 
 		SPAWNER.SpawnObject(backgroundUp);
 		SPAWNER.SpawnObject(backgroundDown);
+		SPAWNER.SpawnObject(horizontalMedusa);
 		SPAWNER.SpawnObject(enemy);
 		SPAWNER.SpawnObject(player);
 
@@ -29,6 +32,8 @@ public:
 		backgroundDown->Render();
 		enemy->Render();
 		player->Render();
+		horizontalMedusa->Render();
+
 
 	}
 

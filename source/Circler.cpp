@@ -29,7 +29,6 @@ void Circler::Move()
 
 	_transform->position.x = center.x + cos(angle) * radius;
 	_transform->position.y = center.y + sin(angle) * radius;
-	std::cout << _transform->position.x << " " << _transform->position.y << " " << oldPosY << std::endl;
 
 	if (_transform->position.y > center.y - 3 && _transform->position.y < center.y + 3)
 	{
