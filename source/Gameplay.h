@@ -9,7 +9,7 @@
 #include "HorizontalMedusa.h"
 #include "VerticalMedusa.h"
 #include "KillerWhale.h"
-
+#include "Beholder.h"
 
 class Gameplay : public Scene
 {
@@ -18,6 +18,7 @@ public:
 
 	void OnEnter() override
 	{
+		Beholder* beholder = new Beholder(1000, 100);
 		KillerWhale* killerWhale = new KillerWhale(RM->WINDOW_WIDTH, RM->WINDOW_HEIGHT, FLOOR);
 		Background* backgroundUp = new Background(RM->WINDOW_HEIGHT);
 		Background* backgroundDown = new Background(0);
@@ -26,12 +27,14 @@ public:
 
 		SPAWNER.SpawnObject(backgroundUp);
 		SPAWNER.SpawnObject(backgroundDown);
+		SPAWNER.SpawnObject(beholder);
 		SPAWNER.SpawnObject(killerWhale);
 		SPAWNER.SpawnObject(enemy);
 		SPAWNER.SpawnObject(player);
 
 		backgroundUp->Render();
 		backgroundDown->Render();
+		beholder->Render();
 		enemy->Render();
 		player->Render();
 		killerWhale->Render();
