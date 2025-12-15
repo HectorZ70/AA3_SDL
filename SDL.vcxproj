@@ -20,6 +20,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="source\AABB.cpp" />
+    <ClCompile Include="source\Amoeba.cpp" />
     <ClCompile Include="source\Background.cpp" />
     <ClCompile Include="source\Beholder.cpp" />
     <ClCompile Include="source\Bullet.cpp" />
@@ -46,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\AABB.h" />
+    <ClInclude Include="source\Amoeba.h" />
     <ClInclude Include="source\Background.h" />
     <ClInclude Include="source\Beholder.h" />
     <ClInclude Include="source\Bullet.h" />

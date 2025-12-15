@@ -10,6 +10,7 @@
 #include "VerticalMedusa.h"
 #include "KillerWhale.h"
 #include "Beholder.h"
+#include "Amoeba.h"
 
 class Gameplay : public Scene
 {
@@ -18,26 +19,20 @@ public:
 
 	void OnEnter() override
 	{
-		Beholder* beholder = new Beholder(1000, 100);
-		KillerWhale* killerWhale = new KillerWhale(RM->WINDOW_WIDTH, RM->WINDOW_HEIGHT, FLOOR);
+		Amoeba* amoeba = new Amoeba(0, 100, false, 0, 0);
 		Background* backgroundUp = new Background(RM->WINDOW_HEIGHT);
 		Background* backgroundDown = new Background(0);
-		Circler* enemy = new Circler(1000.f, 300.f);
 		Player* player = new Player;
 
 		SPAWNER.SpawnObject(backgroundUp);
 		SPAWNER.SpawnObject(backgroundDown);
-		SPAWNER.SpawnObject(beholder);
-		SPAWNER.SpawnObject(killerWhale);
-		SPAWNER.SpawnObject(enemy);
+		SPAWNER.SpawnObject(amoeba);
 		SPAWNER.SpawnObject(player);
 
 		backgroundUp->Render();
 		backgroundDown->Render();
-		beholder->Render();
-		enemy->Render();
+		amoeba->Render();
 		player->Render();
-		killerWhale->Render();
 
 	}
 
