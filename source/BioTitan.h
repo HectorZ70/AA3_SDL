@@ -23,7 +23,7 @@ public:
 		_transform = new Transform();
 		_renderer = new ImageRenderer(_transform, texturePath, ofsset, size);
 		Vector2 randomPosition = Vector2(rand() % RM->WINDOW_WIDTH, rand() % RM->WINDOW_HEIGHT);
-		_transform->position = { RM->WINDOW_WIDTH, RM->WINDOW_HEIGHT };
+		_transform->position = { 1080.f, 1090.f };
 		_transform->scale = Vector2(size);
 		_transform->rotation = 0.f;
 

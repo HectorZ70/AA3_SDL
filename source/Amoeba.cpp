@@ -57,7 +57,6 @@ void Amoeba::StartingMove()
 	if (_transform->position.x <= RM->WINDOW_WIDTH/2)
 	{
 		_transform->position.x += 3.f;
-		std::cout << "MOVING!" << std::endl;
 	}
 	else
 		finishStart = true;
@@ -70,7 +69,6 @@ void Amoeba::MoveInCircle()
 
 	_transform->position.x = center.x + cos(angle) * radius;
 	_transform->position.y = center.y + sin(angle) * radius;
-	std::cout << "CIRCLE!" << std::endl;
 
 	if (_transform->position.y > center.y - 3 && _transform->position.y < center.y + 3)
 	{
@@ -86,7 +84,6 @@ void Amoeba::FinishMove()
 	if (_transform->position.x <= RM->WINDOW_WIDTH)
 	{
 		_transform->position.x -= 3.f;
-		std::cout << "BYEEEE!" << std::endl;
 	}
 	else
 		finishStart = true;
