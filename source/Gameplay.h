@@ -12,6 +12,7 @@
 #include "Beholder.h"
 #include "Amoeba.h"
 #include "Chomper.h"
+#include "Bubble.h"
 
 
 class Gameplay : public Scene
@@ -29,6 +30,7 @@ public:
 			chompers.push_back(chomper);
 			SPAWNER.SpawnObject(chomper);
 		}
+		Bubble* bubble = new Bubble(1024, 300);
 		Amoeba* amoeba = new Amoeba(0, 100, false, 0, 0);
 		Background* backgroundUp = new Background(RM->WINDOW_HEIGHT);
 		Background* backgroundDown = new Background(0);
@@ -36,15 +38,15 @@ public:
 
 		SPAWNER.SpawnObject(backgroundUp);
 		SPAWNER.SpawnObject(backgroundDown);
-		SPAWNER.SpawnObject(amoeba);
+		SPAWNER.SpawnObject(bubble);
 		SPAWNER.SpawnObject(player);
 
 		backgroundUp->Render();
 		backgroundDown->Render();
-		amoeba->Render();
+		bubble->Render();
 		for (Chomper* c : chompers)
 		{
-			c->Render();
+			//c->Render();
 		}
 		player->Render();
 

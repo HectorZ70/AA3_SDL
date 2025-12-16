@@ -16,7 +16,6 @@ void Chomper::Update()
 	}
 	std::cout << _transform->position.x << " " << _transform->position.y << std::endl;
 	Chomper::Render();
-	Object::Update();
 }
 
 void Chomper::Render()
