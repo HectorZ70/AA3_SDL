@@ -5,6 +5,7 @@
 
 class ReplenisherEnergyCannon : public PowerUp
 {
+public:
 	ReplenisherEnergyCannon(Vector2 position)
 	{
 		_transform->position = position;

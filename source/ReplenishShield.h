@@ -5,6 +5,7 @@
 
 class ReplenisherShield : public PowerUp
 {
+public:
 	ReplenisherShield(Vector2 position)
 	{
 		_transform->position = position;

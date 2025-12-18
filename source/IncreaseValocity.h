@@ -5,6 +5,7 @@
 
 class IncreaseVelocity : public PowerUp
 {
+public:
 	IncreaseVelocity(Vector2 position)
 	{
 		_transform->position = position;

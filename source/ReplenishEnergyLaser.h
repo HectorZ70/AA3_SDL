@@ -5,6 +5,7 @@
 
 class ReplenisherEnergyLaser : public PowerUp
 {
+public:
 	ReplenisherEnergyLaser(Vector2 position)
 	{
 		_transform->position = position;

@@ -245,5 +245,8 @@
     <ClInclude Include="source\ReplenishShield.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
+    <ClInclude Include="source\PowerUpFactory.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
