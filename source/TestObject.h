@@ -4,10 +4,18 @@
 #include "RenderManager.h"
 #include "InputManager.h"
 #include "ImageRenderer.h"
+#define ENERGYCANNONMAX 100
+#define ENERGYLASERMAX 100
+#define SHIELDMAX 100
 
 class Player : public Object
 {
+	int score;
 public:
+	int energyCannon;
+	int energyLaser;
+	float velocity;
+	int shield;
 	Player() : Object()
 	{
 		std::string texturePath = "resources/image.png";
@@ -19,11 +27,20 @@ public:
 		_transform->position = { 100, 100 };
 		_transform->scale = Vector2(0.5f, 0.5f);
 		_transform->rotation = 0.f;
-		
+		score = 0;
+		energyCannon = 100;
+		energyLaser = 100;
+		velocity = 5.f;
+		shield = 100;
 	}
 	void Update() override;
 	void Render() override;
 	void Move();
 	void Shoot();
+
+	void IncreaseScore(int increaseScore) { score += increaseScore; }
+	int GetScore() { return score; }
+	void DecreaseEnergyCannon() { energyCannon--; }
+	int GetEnergyCannon() { return energyCannon; }
 
 };
