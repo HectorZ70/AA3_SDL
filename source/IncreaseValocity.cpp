@@ -2,13 +2,20 @@
 
 void IncreaseVelocity::Update()
 {
+
+	if (CollideWithBullet)
+	{
+		PowerUp::
+	}
+
 }
 
-void IncreaseVelocity::CollideWithPlayer()
+bool IncreaseVelocity::CollideWithPlayer()
 {
+
 }
 
-void IncreaseVelocity::CollideWithBullet()
+bool IncreaseVelocity::CollideWithBullet()
 {
 }
 

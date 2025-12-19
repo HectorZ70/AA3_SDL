@@ -4,11 +4,11 @@ void ReplenisherShield::Update()
 {
 }
 
-void ReplenisherShield::CollideWithPlayer()
+bool ReplenisherShield::CollideWithPlayer()
 {
 }
 
-void ReplenisherShield::CollideWithBullet()
+bool ReplenisherShield::CollideWithBullet()
 {
 }
 

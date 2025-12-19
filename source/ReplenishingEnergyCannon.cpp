@@ -5,11 +5,11 @@ void ReplenisherEnergyCannon::Update()
 
 }
 
-void ReplenisherEnergyCannon::CollideWithPlayer()
+bool ReplenisherEnergyCannon::CollideWithPlayer()
 {
 }
 
-void ReplenisherEnergyCannon::CollideWithBullet()
+bool ReplenisherEnergyCannon::CollideWithBullet()
 {
 }
 

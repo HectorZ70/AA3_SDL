@@ -5,11 +5,11 @@ void ReplenisherEnergyLaser::Update()
 
 }
 
-void ReplenisherEnergyLaser::CollideWithPlayer()
+bool ReplenisherEnergyLaser::CollideWithPlayer()
 {
 }
 
-void ReplenisherEnergyLaser::CollideWithBullet()
+bool ReplenisherEnergyLaser::CollideWithBullet()
 {
 }
 
