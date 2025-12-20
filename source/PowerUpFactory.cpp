@@ -4,7 +4,7 @@
 
 PowerUp* PowerUpFactory::CreatePowerup(Vector2 position, int id)
 {
-	PowerUp* powerUp;
+	PowerUp* powerUp = nullptr;
 	switch (id)
 	{
 	case ADDPOINTS:

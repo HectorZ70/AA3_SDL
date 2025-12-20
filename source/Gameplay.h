@@ -13,6 +13,7 @@
 #include "Amoeba.h"
 #include "Chomper.h"
 #include "Bubble.h"
+#include "Turrets.h"
 
 
 class Gameplay : public Scene
@@ -35,19 +36,21 @@ public:
 		Background* backgroundUp = new Background(RM->WINDOW_HEIGHT);
 		Background* backgroundDown = new Background(0);
 		Player* player = new Player;
+		Turret* turretsUp = new Turret(&player->GetPosition(), PositionRelative::UP);
+		Turret* turretsDown = new Turret(&player->GetPosition(), PositionRelative::DOWN);
 
 		SPAWNER.SpawnObject(backgroundUp);
 		SPAWNER.SpawnObject(backgroundDown);
 		SPAWNER.SpawnObject(bubble);
 		SPAWNER.SpawnObject(player);
+		SPAWNER.SpawnObject(turretsUp);
+		SPAWNER.SpawnObject(turretsDown);
 
 		backgroundUp->Render();
 		backgroundDown->Render();
 		bubble->Render();
-		for (Chomper* c : chompers)
-		{
-			//c->Render();
-		}
+		turretsUp->Render();
+		turretsDown->Render();
 		player->Render();
 
 	}

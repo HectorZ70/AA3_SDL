@@ -6,6 +6,7 @@ void ReplenisherShield::Update()
 
 bool ReplenisherShield::CollideWithPlayer()
 {
+	return true;
 }
 
 void ReplenisherShield::Change()

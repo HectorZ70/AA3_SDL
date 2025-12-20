@@ -3,16 +3,13 @@
 void IncreaseVelocity::Update()
 {
 
-	if (CollideWithBullet)
-	{
-		PowerUp::
-	}
+
 
 }
 
 bool IncreaseVelocity::CollideWithPlayer()
 {
-
+	return true;
 }
 
 void IncreaseVelocity::Change()

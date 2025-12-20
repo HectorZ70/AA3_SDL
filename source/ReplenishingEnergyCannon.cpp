@@ -7,6 +7,7 @@ void ReplenisherEnergyCannon::Update()
 
 bool ReplenisherEnergyCannon::CollideWithPlayer()
 {
+	return true;
 }
 
 void ReplenisherEnergyCannon::Change()

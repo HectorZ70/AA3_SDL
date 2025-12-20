@@ -1,5 +1,5 @@
 #pragma once
-
+#include <Vector>
 #include "Object.h"
 #include "RenderManager.h"
 #include "InputManager.h"
@@ -42,5 +42,5 @@ public:
 	int GetScore() { return score; }
 	void DecreaseEnergyCannon() { energyCannon--; }
 	int GetEnergyCannon() { return energyCannon; }
-
+	Vector2& GetPosition() { return _transform->position; }
 };

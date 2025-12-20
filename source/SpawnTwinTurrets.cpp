@@ -17,8 +17,8 @@ void TwinTurretsPowerUp::Change()
 
 void TwinTurretsPowerUp::Effect(Player* player)
 {
-	Turret* turret = new Turret();
-	Turret* turret = new Turret();
-	SPAWNER.SpawnObject()
-	SPAWNER.SpawnObject()
+	Turret* turretsUp = new Turret(&player->GetPosition(), PositionRelative::UP);
+	Turret* turretsDown = new Turret(&player->GetPosition(), PositionRelative::DOWN);
+	SPAWNER.SpawnObject(turretsDown);
+	SPAWNER.SpawnObject(turretsDown);
 }

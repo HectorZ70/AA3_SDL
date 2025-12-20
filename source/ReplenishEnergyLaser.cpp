@@ -7,6 +7,7 @@ void ReplenisherEnergyLaser::Update()
 
 bool ReplenisherEnergyLaser::CollideWithPlayer()
 {
+	return true;
 }
 
 void ReplenisherEnergyLaser::Change()

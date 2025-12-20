@@ -6,6 +6,7 @@ void Points::Update()
 
 bool Points::CollideWithPlayer()
 {
+	return true;
 }
 
 void Points::Change()
