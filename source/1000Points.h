@@ -16,7 +16,6 @@ public:
 
 	void Update() override;
 	bool CollideWithPlayer() override;
-	bool CollideWithBullet() override;
 	void Change() override;
 	void Effect(Player* player) override;
 };

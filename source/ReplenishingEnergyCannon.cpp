@@ -9,10 +9,6 @@ bool ReplenisherEnergyCannon::CollideWithPlayer()
 {
 }
 
-bool ReplenisherEnergyCannon::CollideWithBullet()
-{
-}
-
 void ReplenisherEnergyCannon::Change()
 {
 }

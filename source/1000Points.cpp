@@ -8,10 +8,6 @@ bool Points::CollideWithPlayer()
 {
 }
 
-bool Points::CollideWithBullet()
-{
-}
-
 void Points::Change()
 {
 

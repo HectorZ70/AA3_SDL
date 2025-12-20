@@ -15,10 +15,6 @@ bool IncreaseVelocity::CollideWithPlayer()
 
 }
 
-bool IncreaseVelocity::CollideWithBullet()
-{
-}
-
 void IncreaseVelocity::Change()
 {
 }

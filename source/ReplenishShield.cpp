@@ -8,10 +8,6 @@ bool ReplenisherShield::CollideWithPlayer()
 {
 }
 
-bool ReplenisherShield::CollideWithBullet()
-{
-}
-
 void ReplenisherShield::Change()
 {
 }

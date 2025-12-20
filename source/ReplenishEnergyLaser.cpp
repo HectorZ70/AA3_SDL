@@ -9,10 +9,6 @@ bool ReplenisherEnergyLaser::CollideWithPlayer()
 {
 }
 
-bool ReplenisherEnergyLaser::CollideWithBullet()
-{
-}
-
 void ReplenisherEnergyLaser::Change()
 {
 }

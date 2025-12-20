@@ -29,6 +29,8 @@ PowerUp* PowerUpFactory::CreatePowerup(Vector2 position, int id)
 	return powerUp;
 }
 
+
+//GameplayLogic, if it was hit by bullet this happens
 void PowerUpFactory::ChangePowerUp(PowerUp* powerUp)
 {
 	std::srand(std::time(nullptr));
