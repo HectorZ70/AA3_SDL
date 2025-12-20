@@ -53,6 +53,10 @@ public:
 		{
 			for (int j = i + 1; j < _objects.size(); j++)
 			{
+				if ((_objects[i]->GetType() == ObjectType::BULLET && _objects[j]->GetType() == ObjectType::BULLET)
+					|| (_objects[i]->GetType() == ObjectType::ENEMY && _objects[j]->GetType() == ObjectType::ENEMY))
+					continue;
+
 				if (_objects[i]->GetRigidBody()->CheckCollision(_objects[j]->GetRigidBody()))
 				{
 					std::cout << "COLLISION\n";

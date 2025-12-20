@@ -16,6 +16,7 @@ public:
 		_transform = new Transform();
 		_renderer = new ImageRenderer(_transform, texturePath, ofsset, size);
 		_physics = new RigidBody(_transform);
+		_type = ObjectType::BULLET;
 		
 		Vector2 randomPosition = Vector2(rand() % RM->WINDOW_WIDTH, rand() % RM->WINDOW_HEIGHT);
 		_transform->position = { playerPosition };

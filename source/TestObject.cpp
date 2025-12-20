@@ -51,6 +51,11 @@ void Player::Move()
 
 void Player::Shoot()
 {
-	Bullet* bullet = new Bullet(_transform->position);
+	Vector2 direction = { 1.0f, 0.0f };   
+	float offset = 30.0f;                
+
+	Vector2 spawnPos = _transform->position + direction * offset;
+
+	Bullet* bullet = new Bullet(spawnPos);
 	SPAWNER.SpawnObject(bullet);
 }

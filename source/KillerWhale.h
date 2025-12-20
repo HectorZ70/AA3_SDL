@@ -27,6 +27,7 @@ public:
 		_transform->position = { posX, posY };
 		_transform->scale = Vector2(0.5f, 0.5f);
 		_transform->rotation = 0.f;
+		_type = ObjectType::ENEMY;
 
 		_physics->AddCollider(new AABB(
 			_transform->position,
