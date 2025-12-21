@@ -1,6 +1,7 @@
 #include "PowerUps.h"
 #include "TestObject.h"
 #include "Spawner.h"
+#include "TestObject.h"
 #define POINTS 1000
 
 class Points : public PowerUp

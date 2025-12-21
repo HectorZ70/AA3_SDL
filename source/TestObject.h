@@ -10,10 +10,11 @@
 
 class Player : public Object
 {
-	int score;
+
 public:
-	int energyCannon;
-	int energyLaser;
+	int score;
+	int energyCannon = 1;
+	int energyLaser = 1;
 	float velocity;
 	int shield;
 	Player() : Object()
@@ -28,8 +29,8 @@ public:
 		_transform->scale = Vector2(0.5f, 0.5f);
 		_transform->rotation = 0.f;
 		score = 0;
-		energyCannon = 100;
-		energyLaser = 100;
+		energyCannon = 10;
+		energyLaser = 10;
 		velocity = 5.f;
 		shield = 100;
 	}
@@ -43,4 +44,6 @@ public:
 	void DecreaseEnergyCannon() { energyCannon--; }
 	int GetEnergyCannon() { return energyCannon; }
 	Vector2& GetPosition() { return _transform->position; }
+	int& GetEnergyLaserAmmunation() { return energyLaser; }
+	int& GetEnergyCannonAmmunation() { return energyCannon; }
 };

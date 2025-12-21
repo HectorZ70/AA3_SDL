@@ -31,8 +31,6 @@ void Turret::MoveAlongSide()
 	{
 		_transform->position.y = currentPlayerPosition->y - OFFSET;
 	}
-
-	std::cout << _transform->position.x << " " << _transform->position.y << std::endl;
 }
 
 void Turret::Rotate()
