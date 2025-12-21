@@ -6,6 +6,7 @@
 
 #define OFFSET 50
 #define UNITSTRAVELLED 100
+#define ROTATION 45
 
 enum class PositionRelative
 {
@@ -53,4 +54,5 @@ public:
 	void MoveAlongSide();
 	void Rotate();
 	void Shoot();
+	int GetRotation();
 };

@@ -6,6 +6,11 @@ void Turret::Update()
 {
 	Turret::Rotate();
 	Turret::MoveAlongSide();
+	
+	if (IM->GetEvent(SDLK_J, DOWN))
+	{
+		Turret::Shoot();
+	}
 
 	Object::Update();
 }
@@ -37,14 +42,14 @@ void Turret::Rotate()
 		if (currentPlayerPosition->x >= anteriorPlayerPosition.x + OFFSET)
 		{
 			if (_transform->rotation < 270)
-				_transform->rotation += 30;
+				_transform->rotation += ROTATION;
 			anteriorPlayerPosition.x = currentPlayerPosition->x;
 		}
 
 		if (currentPlayerPosition->x <= anteriorPlayerPosition.x - OFFSET)
 		{
 			if (_transform->rotation > 90)
-				_transform->rotation -= 30;
+				_transform->rotation -= ROTATION;
 			anteriorPlayerPosition.x = currentPlayerPosition->x;
 		}
 	}
@@ -53,23 +58,26 @@ void Turret::Rotate()
 		if (currentPlayerPosition->x >= anteriorPlayerPosition.x + OFFSET)
 		{
 			if (_transform->rotation > -90)
-				_transform->rotation -= 30;
+				_transform->rotation -= ROTATION;
 			anteriorPlayerPosition.x = currentPlayerPosition->x;
 		}
 
 		if (currentPlayerPosition->x <= anteriorPlayerPosition.x - OFFSET)
 		{
 			if (_transform->rotation < 90)
-				_transform->rotation += 30;
+				_transform->rotation += ROTATION;
 			anteriorPlayerPosition.x = currentPlayerPosition->x;
-			std::cout << "BBBBBBBBB" << std::endl;
-
 		}
 	}
 }
 
 void Turret::Shoot()
 {
-	Bullet* bullet = new Bullet(*currentPlayerPosition);
+	Bullet* bullet = new Bullet(_transform->position);
 	SPAWNER.SpawnObject(bullet);
+}
+
+int Turret::GetRotation()
+{
+	return _transform->rotation;
 }
