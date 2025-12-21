@@ -4,7 +4,7 @@
 #include "ImageRenderer.h"
 #include "InputManager.h"
 
-#define OFFSET 100
+#define OFFSET 50
 #define UNITSTRAVELLED 100
 
 enum class PositionRelative
@@ -27,11 +27,13 @@ public:
 		Vector2 ofsset = { 0, 0 };
 		_transform = new Transform();
 		_renderer = new ImageRenderer(_transform, texturePath, ofsset, size);
+		_transform->scale = Vector2(0.3f, 0.3f);
 
 
 		currentPlayerPosition = positionPlayer;
 		anteriorPlayerPosition = *currentPlayerPosition;
 		_transform->position = *currentPlayerPosition;
+		_transform->rotation = 90;
 		upDown = upOrDown;
 		if (upDown == PositionRelative::DOWN)
 		{

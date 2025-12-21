@@ -1,13 +1,13 @@
 #include "Turrets.h"
 #include "Spawner.h"
 #include "Bullet.h"
-
+#include <iostream>
 void Turret::Update()
 {
-	Rotate();
-	MoveAlongSide();
+	Turret::Rotate();
+	Turret::MoveAlongSide();
 
-	Turret::Render();
+	Object::Update();
 }
 
 void Turret::Render()
@@ -20,24 +20,51 @@ void Turret::MoveAlongSide()
 	_transform->position.x = currentPlayerPosition->x;
 	if (upDown == PositionRelative::DOWN)
 	{
-		_transform->position.y = OFFSET + currentPlayerPosition->y;
+		_transform->position.y = currentPlayerPosition->y + OFFSET;
 	}
 	else if (upDown == PositionRelative::UP)
 	{
-		_transform->position.y = OFFSET - currentPlayerPosition->y;
+		_transform->position.y = currentPlayerPosition->y - OFFSET;
 	}
+
+	std::cout << _transform->position.x << " " << _transform->position.y << std::endl;
 }
 
 void Turret::Rotate()
 {
-	if (currentPlayerPosition->x >= anteriorPlayerPosition.x + OFFSET)
+	if (upDown == PositionRelative::UP)
 	{
-		_transform->rotation += 30;
-	}
+		if (currentPlayerPosition->x >= anteriorPlayerPosition.x + OFFSET)
+		{
+			if (_transform->rotation < 270)
+				_transform->rotation += 30;
+			anteriorPlayerPosition.x = currentPlayerPosition->x;
+		}
 
-	if (currentPlayerPosition->x <= anteriorPlayerPosition.x - OFFSET)
+		if (currentPlayerPosition->x <= anteriorPlayerPosition.x - OFFSET)
+		{
+			if (_transform->rotation > 90)
+				_transform->rotation -= 30;
+			anteriorPlayerPosition.x = currentPlayerPosition->x;
+		}
+	}
+	else if (upDown == PositionRelative::DOWN)
 	{
-		_transform->rotation -= 30;
+		if (currentPlayerPosition->x >= anteriorPlayerPosition.x + OFFSET)
+		{
+			if (_transform->rotation > -90)
+				_transform->rotation -= 30;
+			anteriorPlayerPosition.x = currentPlayerPosition->x;
+		}
+
+		if (currentPlayerPosition->x <= anteriorPlayerPosition.x - OFFSET)
+		{
+			if (_transform->rotation < 90)
+				_transform->rotation += 30;
+			anteriorPlayerPosition.x = currentPlayerPosition->x;
+			std::cout << "BBBBBBBBB" << std::endl;
+
+		}
 	}
 }
 
