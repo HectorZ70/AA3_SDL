@@ -37,9 +37,9 @@ public:
 		Laser* laser = new Laser(&player->GetPosition(), &player->GetEnergyLaserAmmunation());
 		Cannon* cannon = new Cannon(&player->GetPosition(), &player->GetEnergyCannonAmmunation());
 		
-		PowerUpFactory* powerUp = new PowerUpFactory({100, 200}, 5, &player->GetScore(), &player->GetShield(), &player->GetEnergyLaserAmmunation(), &player->GetEnergyCannonAmmunation(), &player->GetVelocity(), player);
+		PowerUpFactory* powerUp = new PowerUpFactory({100, 200}, 1, &player->GetScore(), &player->GetShield(), &player->GetEnergyLaserAmmunation(), &player->GetEnergyCannonAmmunation(), &player->GetVelocity(), player);
 
-		SPAWNER.SpawnObject(powerUp);
+		SPAWNER.SpawnObject(powerUp->CreatePowerup());
 		SPAWNER.SpawnObject(backgroundUp);
 		SPAWNER.SpawnObject(backgroundDown);
 		SPAWNER.SpawnObject(player);

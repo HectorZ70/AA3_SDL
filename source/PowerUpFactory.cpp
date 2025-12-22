@@ -5,6 +5,7 @@
 PowerUp* PowerUpFactory::CreatePowerup()
 {
 	PowerUp* powerUp = nullptr;
+
 	switch (idPowerUp)
 	{
 	case ADDPOINTS:
