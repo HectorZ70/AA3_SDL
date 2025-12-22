@@ -27,7 +27,7 @@ void Background::SetBackground(Background* other)
 
 void Background::CheckLoop(Background* other)
 {
-	if (_transform->position.x <= -_width)
+	if (_transform->position.x <= -_width / 2)
 	{
 		_transform->position.x =
 			other->_transform->position.x + _width;
