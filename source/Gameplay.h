@@ -5,6 +5,7 @@
 #include "TestObject.h"
 #include "Enemy.h"
 #include "Circler.h"
+#include "Borders.h"
 #include "Background.h"
 #include "HorizontalMedusa.h"
 #include "VerticalMedusa.h"
@@ -32,17 +33,36 @@ public:
 		}
 		Bubble* bubble = new Bubble(1024, 300);
 		Amoeba* amoeba = new Amoeba(0, 100, false, 0, 0);
-		Background* backgroundUp = new Background(RM->WINDOW_HEIGHT);
-		Background* backgroundDown = new Background(0);
+		Border* borderUp = new Border(RM->WINDOW_WIDTH / 2.0f, RM->WINDOW_HEIGHT);
+		Border* borderUp2 = new Border(RM->WINDOW_WIDTH * 1.5f, RM->WINDOW_HEIGHT);
+		Border* borderDown = new Border(RM->WINDOW_WIDTH / 2.0f,0);
+		Border* borderDown2 = new Border(RM->WINDOW_WIDTH * 1.5f,0);
+		Background* background = new Background(RM->WINDOW_WIDTH / 2.0f, RM->WINDOW_HEIGHT / 2.0f);
+		Background* background2 = new Background(RM->WINDOW_WIDTH * 1.5f, RM->WINDOW_HEIGHT / 2.0f);
 		Player* player = new Player;
 
-		SPAWNER.SpawnObject(backgroundUp);
-		SPAWNER.SpawnObject(backgroundDown);
+		background->SetBackground(background2);
+		background2->SetBackground(background);
+
+		borderUp->SetBorders(borderUp2);
+		borderUp2->SetBorders(borderUp);
+
+		borderDown->SetBorders(borderDown2);
+		borderDown2->SetBorders(borderDown);
+
+		SPAWNER.SpawnObject(background);
+		SPAWNER.SpawnObject(background2);
+		SPAWNER.SpawnObject(borderUp);
+		SPAWNER.SpawnObject(borderUp2);
+		SPAWNER.SpawnObject(borderDown);
+		SPAWNER.SpawnObject(borderDown2);
 		SPAWNER.SpawnObject(bubble);
 		SPAWNER.SpawnObject(player);
 
-		backgroundUp->Render();
-		backgroundDown->Render();
+		borderUp->Render();
+		borderDown->Render();
+		background->Render();
+		background2->Render();
 		bubble->Render();
 		for (Chomper* c : chompers)
 		{

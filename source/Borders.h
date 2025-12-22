@@ -1,17 +1,15 @@
 #pragma once
-#include <string>
 #include "ImageObject.h"
 
-class Background : public ImageObject
-{
+class Border : public ImageObject{
 private:
 	float _width;
-	Background* _other;
+	Border* _other;
 public:
-	Background(float xPos, float yPos) : ImageObject("resources/background.png", {0.f, 0.f}, { 10.f, 100.f})
+	Border(float xPos, float yPos) : ImageObject("resources/image.png", { 0.f, 0.f }, { 10.f, 100.f })
 	{
-		std::string texturePath = "resources/background.png";
-		Vector2 size = { 1920, 1080 };
+		std::string texturePath = "resources/image.png";
+		Vector2 size = { 1920, 50 };
 		Vector2 ofsset = { 0, 0 };
 		_transform = new Transform();
 		_renderer = new ImageRenderer(_transform, texturePath, ofsset, size);
@@ -26,6 +24,6 @@ public:
 	void Render() override;
 
 	void Move();
-	void SetBackground(Background* other);
-	void CheckLoop(Background* other);
+	void SetBorders(Border* other);
+	void CheckLoop(Border* other);
 };
