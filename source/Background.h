@@ -4,7 +4,9 @@
 
 class Background : public ImageObject
 {
-
+private:
+	float _width;
+	Background* _other;
 public:
 	Background(float xPos, float yPos) : ImageObject("resources/background.png", {0.f, 0.f}, { 10.f, 100.f})
 	{
@@ -17,10 +19,13 @@ public:
 		_transform->position = { xPos , yPos };
 		_transform->rotation = 0.f;
 		_transform->size = size;
+		_width = size.x;
 	}
 
 	void Update() override;
 	void Render() override;
 
 	void Move();
+	void SetBackground(Background* other);
+	void CheckLoop(Background* other);
 };

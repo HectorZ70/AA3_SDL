@@ -35,11 +35,15 @@ public:
 		Amoeba* amoeba = new Amoeba(0, 100, false, 0, 0);
 		Border* borderUp = new Border(0, RM->WINDOW_HEIGHT);
 		Border* borderDown = new Border(0,0);
-		Background* backgroundMiddle = new Background(RM->WINDOW_WIDTH / 2.0f, RM->WINDOW_HEIGHT / 2.0f);
+		Background* background = new Background(RM->WINDOW_WIDTH / 2.0f, RM->WINDOW_HEIGHT / 2.0f);
+		Background* background2 = new Background(RM->WINDOW_WIDTH, RM->WINDOW_HEIGHT / 2.0f);
 		Player* player = new Player;
 
-		
-		SPAWNER.SpawnObject(backgroundMiddle);
+		background->SetBackground(background2);
+		background2->SetBackground(background);
+
+		SPAWNER.SpawnObject(background);
+		SPAWNER.SpawnObject(background2);
 		SPAWNER.SpawnObject(borderUp);
 		SPAWNER.SpawnObject(borderDown);
 		SPAWNER.SpawnObject(bubble);
@@ -47,7 +51,8 @@ public:
 
 		borderUp->Render();
 		borderDown->Render();
-		backgroundMiddle->Render();
+		background->Render();
+		background2->Render();
 		bubble->Render();
 		for (Chomper* c : chompers)
 		{
