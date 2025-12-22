@@ -2,9 +2,8 @@
 
 void IncreaseVelocity::Update()
 {
-
-
-
+	IncreaseVelocity::Effect();
+	Object::Update();
 }
 
 bool IncreaseVelocity::CollideWithPlayer()
@@ -16,7 +15,7 @@ void IncreaseVelocity::Change()
 {
 }
 
-void IncreaseVelocity::Effect(Player* player)
+void IncreaseVelocity::Effect()
 {
-	player->velocity += VELOCITY;
+	*playerVelocity += VELOCITY;
 }

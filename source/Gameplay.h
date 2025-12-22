@@ -16,7 +16,10 @@
 #include "Turrets.h"
 #include "Laser.h"
 #include "Cannons.h"
-
+#include "1000Points.h"
+#include "ReplenishShield.h"
+#include "IncreaseValocity.h"
+#include "PowerUpFactory.h"
 
 class Gameplay : public Scene
 {
@@ -33,7 +36,10 @@ public:
 		Turret* turretsDown = new Turret(&player->GetPosition(), PositionRelative::DOWN);
 		Laser* laser = new Laser(&player->GetPosition(), &player->GetEnergyLaserAmmunation());
 		Cannon* cannon = new Cannon(&player->GetPosition(), &player->GetEnergyCannonAmmunation());
+		
+		PowerUpFactory* powerUp = new PowerUpFactory({100, 200}, 5, &player->GetScore(), &player->GetShield(), &player->GetEnergyLaserAmmunation(), &player->GetEnergyCannonAmmunation(), &player->GetVelocity(), player);
 
+		SPAWNER.SpawnObject(powerUp);
 		SPAWNER.SpawnObject(backgroundUp);
 		SPAWNER.SpawnObject(backgroundDown);
 		SPAWNER.SpawnObject(player);
@@ -41,6 +47,7 @@ public:
 		SPAWNER.SpawnObject(turretsDown);
 		SPAWNER.SpawnObject(laser);
 		SPAWNER.SpawnObject(cannon);
+
 
 		backgroundUp->Render();
 		backgroundDown->Render();

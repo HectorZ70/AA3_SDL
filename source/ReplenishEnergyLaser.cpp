@@ -2,7 +2,8 @@
 
 void ReplenisherEnergyLaser::Update()
 {
-
+	ReplenisherEnergyLaser::Effect();
+	Object::Update();
 }
 
 bool ReplenisherEnergyLaser::CollideWithPlayer()
@@ -14,7 +15,7 @@ void ReplenisherEnergyLaser::Change()
 {
 }
 
-void ReplenisherEnergyLaser::Effect(Player* player)
+void ReplenisherEnergyLaser::Effect()
 {
-	player->energyLaser = ENERGYLASERMAX;
+	*laserAmmunation += MAX;
 }

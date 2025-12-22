@@ -16,7 +16,7 @@ public:
 	virtual void Update() = 0;
 	virtual bool CollideWithPlayer() = 0;
 	virtual void Change() = 0;
-	virtual void Effect(Player* player) = 0;
+	virtual void Effect() = 0;
 	Vector2 GetPosition()
 	{
 		return _transform->position;

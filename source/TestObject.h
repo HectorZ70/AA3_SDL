@@ -40,10 +40,12 @@ public:
 	void Shoot();
 
 	void IncreaseScore(int increaseScore) { score += increaseScore; }
-	int GetScore() { return score; }
+	int& GetScore() { return score; }
+	int& GetShield() { return shield; }
 	void DecreaseEnergyCannon() { energyCannon--; }
 	int GetEnergyCannon() { return energyCannon; }
 	Vector2& GetPosition() { return _transform->position; }
 	int& GetEnergyLaserAmmunation() { return energyLaser; }
 	int& GetEnergyCannonAmmunation() { return energyCannon; }
+	float& GetVelocity() { return velocity; }
 };

@@ -2,31 +2,37 @@
 #include <cstdlib>
 #include <ctime>
 
-PowerUp* PowerUpFactory::CreatePowerup(Vector2 position, int id)
+PowerUp* PowerUpFactory::CreatePowerup()
 {
 	PowerUp* powerUp = nullptr;
-	switch (id)
+	switch (idPowerUp)
 	{
 	case ADDPOINTS:
-		powerUp = new Points(position);
+		powerUp = new Points(pos, playerScore);
 		break;
 	case REPLENISHSHIELD:
-		powerUp = new ReplenisherShield(position);
+		powerUp = new ReplenisherShield(pos, shield);
 		break;
 	case REPLENISHLASER:
-		powerUp = new ReplenisherEnergyLaser(position);
+		powerUp = new ReplenisherEnergyLaser(pos, laser);
 		break;
 	case REPLENISHCANNON:
-		powerUp = new ReplenisherEnergyCannon(position);
+		powerUp = new ReplenisherEnergyCannon(pos, cannon);
 		break;
 	case INCREASEVELOCITY:
-		powerUp = new IncreaseVelocity(position);
+		powerUp = new IncreaseVelocity(pos, velocity);
 		break;
 	case TURRETWTINS:
 		// We need to finish Turret twins
 		break;
 	}
 	return powerUp;
+}
+
+void PowerUpFactory::Update()
+{
+	PowerUpFactory::CreatePowerup();
+	Object::Update();
 }
 
 
@@ -40,19 +46,19 @@ void PowerUpFactory::ChangePowerUp(PowerUp* powerUp)
 	switch (newId)
 	{
 	case ADDPOINTS:
-		newPowerUp = new Points(powerUp->GetPosition());
+		newPowerUp = new Points(powerUp->GetPosition(), &player->GetScore());
 		break;
 	case REPLENISHSHIELD:
-		newPowerUp = new ReplenisherShield(powerUp->GetPosition());
+		newPowerUp = new ReplenisherShield(powerUp->GetPosition(), &player->GetShield());
 		break;
 	case REPLENISHLASER:
-		newPowerUp = new ReplenisherEnergyLaser(powerUp->GetPosition());
+		newPowerUp = new ReplenisherEnergyLaser(powerUp->GetPosition(), &player->GetEnergyLaserAmmunation());
 		break;
 	case REPLENISHCANNON:
-		newPowerUp = new ReplenisherEnergyCannon(powerUp->GetPosition());
+		newPowerUp = new ReplenisherEnergyCannon(powerUp->GetPosition(), &player->GetEnergyCannonAmmunation());
 		break;
 	case INCREASEVELOCITY:
-		newPowerUp = new IncreaseVelocity(powerUp->GetPosition());
+		newPowerUp = new IncreaseVelocity(powerUp->GetPosition(), &player->GetVelocity());
 		break;
 	case TURRETWTINS:
 		// We need to finish Turret twins

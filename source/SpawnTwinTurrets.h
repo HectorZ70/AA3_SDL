@@ -10,5 +10,5 @@ class TwinTurretsPowerUp : public PowerUp
 	void Update() override;
 	bool CollideWithPlayer() override;
 	void Change() override;
-	void Effect(Player* player) override;
+	void Effect() override;
 };

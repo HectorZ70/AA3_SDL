@@ -15,10 +15,10 @@ void TwinTurretsPowerUp::Change()
 {
 }
 
-void TwinTurretsPowerUp::Effect(Player* player)
+void TwinTurretsPowerUp::Effect()
 {
-	Turret* turretsUp = new Turret(&player->GetPosition(), PositionRelative::UP);
-	Turret* turretsDown = new Turret(&player->GetPosition(), PositionRelative::DOWN);
-	SPAWNER.SpawnObject(turretsDown);
-	SPAWNER.SpawnObject(turretsDown);
+	//Turret* turretsUp = new Turret(&player->GetPosition(), PositionRelative::UP);
+	//Turret* turretsDown = new Turret(&player->GetPosition(), PositionRelative::DOWN);
+	//SPAWNER.SpawnObject(turretsDown);
+	//SPAWNER.SpawnObject(turretsDown);
 }

@@ -2,7 +2,8 @@
 
 void ReplenisherEnergyCannon::Update()
 {
-
+	ReplenisherEnergyCannon::Effect();
+	Object::Update();
 }
 
 bool ReplenisherEnergyCannon::CollideWithPlayer()
@@ -14,7 +15,7 @@ void ReplenisherEnergyCannon::Change()
 {
 }
 
-void ReplenisherEnergyCannon::Effect(Player* player)
+void ReplenisherEnergyCannon::Effect()
 {
-	player->energyCannon = ENERGYCANNONMAX;
+	*cannonAmmunation += MAX;
 }

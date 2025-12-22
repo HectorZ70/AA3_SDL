@@ -2,6 +2,8 @@
 
 void ReplenisherShield::Update()
 {
+	ReplenisherShield::Effect();
+	Object::Update();
 }
 
 bool ReplenisherShield::CollideWithPlayer()
@@ -13,7 +15,8 @@ void ReplenisherShield::Change()
 {
 }
 
-void ReplenisherShield::Effect(Player* player)
+void ReplenisherShield::Effect()
 {
-	player->shield = SHIELDMAX;
+	*shield += MAX;
+
 }

@@ -2,7 +2,8 @@
 
 void Points::Update()
 {
-	
+	Points::Effect();
+	Object::Update();
 }
 
 bool Points::CollideWithPlayer()
@@ -15,7 +16,8 @@ void Points::Change()
 
 }
 
-void Points::Effect(Player* player)
+void Points::Effect()
 {
-	player->IncreaseScore(points);
+	*points += POINTS;
+	std::cout << *points << std::endl;
 }

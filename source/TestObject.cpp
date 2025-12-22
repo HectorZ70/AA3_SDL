@@ -10,6 +10,7 @@ void Player::Update()
 		bool hasMoved = false;
 		Player::Move();
 		Object::Update();
+		std::cout << "Velocity: " << velocity << std::endl;
 }
 
 void Player::Render()
