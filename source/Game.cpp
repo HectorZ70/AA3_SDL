@@ -13,6 +13,7 @@ void Game::Init()
 {
 	RM->Init();
 	RM->LoadTexture("resources/image.png");
+	RM->LoadTexture("resources/background.png");
 	RM->LoadFont(FONT_PATH);
 
 	//Carga de escenas

@@ -6,14 +6,13 @@ class Background : public ImageObject
 {
 
 public:
-	Background(float yPos) : ImageObject("resources/image.png", {0.f, 0.f}, { 10.f, 100.f})
+	Background(float xPos, float yPos) : ImageObject("resources/background.png", {0.f, 0.f}, { 10.f, 100.f})
 	{
-		std::string texturePath = "resources/image.png";
-		Vector2 size = { 100000, 100 };
+		std::string texturePath = "resources/background.png";
+		Vector2 size = { 1920, 1080 };
 		Vector2 ofsset = { 0, 0 };
 		_transform = new Transform();
 		_renderer = new ImageRenderer(_transform, texturePath, ofsset, size);
-		float xPos = RM->WINDOW_WIDTH;
 
 		_transform->position = { xPos , yPos };
 		_transform->rotation = 0.f;
