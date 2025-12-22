@@ -24,6 +24,7 @@
     <ClCompile Include="source\Background.cpp" />
     <ClCompile Include="source\Beholder.cpp" />
     <ClCompile Include="source\BioTitan.cpp" />
+    <ClCompile Include="source\Borders.cpp" />
     <ClCompile Include="source\Bubble.cpp" />
     <ClCompile Include="source\Bullet.cpp" />
     <ClCompile Include="source\Button.cpp" />
@@ -54,6 +55,7 @@
     <ClInclude Include="source\Background.h" />
     <ClInclude Include="source\Beholder.h" />
     <ClInclude Include="source\BioTitan.h" />
+    <ClInclude Include="source\Borders.h" />
     <ClInclude Include="source\Bubble.h" />
     <ClInclude Include="source\Bullet.h" />
     <ClInclude Include="source\Button.h" />
