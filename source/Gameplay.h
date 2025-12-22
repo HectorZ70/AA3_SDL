@@ -32,30 +32,17 @@ public:
 		Background* backgroundUp = new Background(RM->WINDOW_HEIGHT);
 		Background* backgroundDown = new Background(0);
 		Player* player = new Player;
-		Turret* turretsUp = new Turret(&player->GetPosition(), PositionRelative::UP);
-		Turret* turretsDown = new Turret(&player->GetPosition(), PositionRelative::DOWN);
-		Laser* laser = new Laser(&player->GetPosition(), &player->GetEnergyLaserAmmunation());
-		Cannon* cannon = new Cannon(&player->GetPosition(), &player->GetEnergyCannonAmmunation());
-		
-		PowerUpFactory* powerUp = new PowerUpFactory({100, 200}, 1, &player->GetScore(), &player->GetShield(), &player->GetEnergyLaserAmmunation(), &player->GetEnergyCannonAmmunation(), &player->GetVelocity(), player);
+		PowerUpFactory* powerUp = new PowerUpFactory({100, 200}, 6, &player->GetScore(), &player->GetShield(), &player->GetEnergyLaserAmmunation(), &player->GetEnergyCannonAmmunation(), &player->GetVelocity(), player);
 
 		SPAWNER.SpawnObject(powerUp->CreatePowerup());
 		SPAWNER.SpawnObject(backgroundUp);
 		SPAWNER.SpawnObject(backgroundDown);
 		SPAWNER.SpawnObject(player);
-		SPAWNER.SpawnObject(turretsUp);
-		SPAWNER.SpawnObject(turretsDown);
-		SPAWNER.SpawnObject(laser);
-		SPAWNER.SpawnObject(cannon);
 
 
 		backgroundUp->Render();
 		backgroundDown->Render();
-		turretsUp->Render();
-		turretsDown->Render();
 		player->Render();
-		laser->Render();
-
 	}
 
 	void OnExit() { Scene::OnExit(); }

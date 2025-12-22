@@ -5,6 +5,7 @@
 
 class IncreaseVelocity : public PowerUp
 {
+	bool hasBeenPlayed = false;
 	float* playerVelocity = nullptr;
 public:
 	IncreaseVelocity(Vector2 position, float* velocity)

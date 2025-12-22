@@ -6,6 +6,7 @@
 
 class ReplenisherShield : public PowerUp
 {
+	bool hasBeenPlayed = false;
 	int* shield = nullptr;
 public:
 	ReplenisherShield(Vector2 position, int* playerShield)

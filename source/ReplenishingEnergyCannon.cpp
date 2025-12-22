@@ -17,5 +17,9 @@ void ReplenisherEnergyCannon::Change()
 
 void ReplenisherEnergyCannon::Effect()
 {
-	*cannonAmmunation += MAX;
+	if (hasBeenPlayed == false)
+	{
+		*cannonAmmunation += MAX;
+		hasBeenPlayed = true;
+	}
 }

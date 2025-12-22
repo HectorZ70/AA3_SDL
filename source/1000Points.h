@@ -7,6 +7,7 @@
 
 class Points : public PowerUp
 {
+	bool hasBeenPlayed = false;
 	int* points = nullptr;
 public:
 

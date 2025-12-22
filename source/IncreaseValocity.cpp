@@ -17,5 +17,9 @@ void IncreaseVelocity::Change()
 
 void IncreaseVelocity::Effect()
 {
-	*playerVelocity += VELOCITY;
+	if (hasBeenPlayed == false)
+	{
+		*playerVelocity += VELOCITY;
+		hasBeenPlayed == true;
+	}
 }

@@ -17,5 +17,9 @@ void ReplenisherEnergyLaser::Change()
 
 void ReplenisherEnergyLaser::Effect()
 {
-	*laserAmmunation += MAX;
+	if (hasBeenPlayed == false)
+	{
+		*laserAmmunation += MAX;
+		hasBeenPlayed = true;
+	}
 }

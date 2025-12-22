@@ -18,6 +18,10 @@ void Points::Change()
 
 void Points::Effect()
 {
-	*points += POINTS;
-	std::cout << *points << std::endl;
+	if (hasBeenPlayed == false)
+	{
+		*points += POINTS;
+		std::cout << *points << std::endl;
+		hasBeenPlayed = true;
+	}
 }

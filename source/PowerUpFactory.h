@@ -21,6 +21,7 @@ enum PowerUpType
 
 class PowerUpFactory : public Object
 {
+	bool hasBeenPlayed = false;
 	Player* player = nullptr;
 	Vector2 pos;
 	int idPowerUp = 0;

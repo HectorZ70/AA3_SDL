@@ -1,9 +1,12 @@
 #include "SpawnTwinTurrets.h"
 #include "Spawner.h"
 #include "Turrets.h"
+#include "TestObject.h"
 
 void TwinTurretsPowerUp::Update()
 {
+	TwinTurretsPowerUp::Effect();
+	Object::Update();
 }
 
 bool TwinTurretsPowerUp::CollideWithPlayer()
@@ -17,8 +20,12 @@ void TwinTurretsPowerUp::Change()
 
 void TwinTurretsPowerUp::Effect()
 {
-	//Turret* turretsUp = new Turret(&player->GetPosition(), PositionRelative::UP);
-	//Turret* turretsDown = new Turret(&player->GetPosition(), PositionRelative::DOWN);
-	//SPAWNER.SpawnObject(turretsDown);
-	//SPAWNER.SpawnObject(turretsDown);
+	if (hasBeenPlayed == false)
+	{
+		Turret* turretsUp = new Turret(&player->GetPosition(), PositionRelative::UP);
+		Turret* turretsDown = new Turret(&player->GetPosition(), PositionRelative::DOWN);
+		SPAWNER.SpawnObject(turretsUp);
+		SPAWNER.SpawnObject(turretsDown);
+		hasBeenPlayed = true;
+	}
 }

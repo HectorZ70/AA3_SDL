@@ -6,6 +6,7 @@
 
 class ReplenisherEnergyLaser : public PowerUp
 {
+	bool hasBeenPlayed = false;
 	int* laserAmmunation = nullptr;
 public:
 	ReplenisherEnergyLaser(Vector2 position, int* ammunation)

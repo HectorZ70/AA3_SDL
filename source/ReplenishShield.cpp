@@ -17,6 +17,10 @@ void ReplenisherShield::Change()
 
 void ReplenisherShield::Effect()
 {
-	*shield += MAX;
+	if (hasBeenPlayed == false)
+	{
+		*shield += MAX;
+		hasBeenPlayed = true;
+	}
 
 }

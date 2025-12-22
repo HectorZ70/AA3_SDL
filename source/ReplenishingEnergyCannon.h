@@ -6,6 +6,7 @@
 
 class ReplenisherEnergyCannon : public PowerUp
 {
+	bool hasBeenPlayed = false;
 	int* cannonAmmunation = nullptr;
 public:
 	ReplenisherEnergyCannon(Vector2 position, int* ammunation)

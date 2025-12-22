@@ -24,7 +24,7 @@ PowerUp* PowerUpFactory::CreatePowerup()
 		powerUp = new IncreaseVelocity(pos, velocity);
 		break;
 	case TURRETWTINS:
-		// We need to finish Turret twins
+		powerUp = new TwinTurretsPowerUp({-100, -100}, player);
 		break;
 	}
 	return powerUp;
@@ -32,7 +32,11 @@ PowerUp* PowerUpFactory::CreatePowerup()
 
 void PowerUpFactory::Update()
 {
-	PowerUpFactory::CreatePowerup();
+	if (hasBeenPlayed == false)
+	{
+		PowerUpFactory::CreatePowerup();
+		hasBeenPlayed = true;
+	}
 	Object::Update();
 }
 
