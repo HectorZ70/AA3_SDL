@@ -14,7 +14,7 @@ void Laser::Update()
 
 void Laser::Shoot()
 {
-	Bullet* bullet = new Bullet({_transform->position.x, _transform->position.y + OFFSET});
+	Bullet* bullet = new Bullet({_transform->position.x, _transform->position.y + OFFSET}, 1);
 	SPAWNER.SpawnObject(bullet);
 }
 

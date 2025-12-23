@@ -14,8 +14,8 @@ void Cannon::Update()
 
 void Cannon::Shoot()
 {
-	Bullet* bullet = new Bullet({ _transform->position.x, _transform->position.y + OFFSET });
-	Bullet* secondBullet = new Bullet({ _transform->position.x, _transform->position.y - OFFSET });
+	Bullet* bullet = new Bullet({ _transform->position.x, _transform->position.y + OFFSET}, 1);
+	Bullet* secondBullet = new Bullet({ _transform->position.x, _transform->position.y - OFFSET}, 1);
 	SPAWNER.SpawnObject(bullet);
 	SPAWNER.SpawnObject(secondBullet);
 }

@@ -10,7 +10,6 @@ void Player::Update()
 		bool hasMoved = false;
 		Player::Move();
 		Object::Update();
-		std::cout << "Points: " << score << std::endl;
 }
 
 void Player::Render()
@@ -52,6 +51,6 @@ void Player::Move()
 
 void Player::Shoot()
 {
-	Bullet* bullet = new Bullet(_transform->position);
+	Bullet* bullet = new Bullet(_transform->position, 3);
 	SPAWNER.SpawnObject(bullet);
 }

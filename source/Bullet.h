@@ -7,8 +7,9 @@
 
 class Bullet : public Object
 {
+	int directionBullet;
 public:
-	Bullet(Vector2 playerPosition) : Object()
+	Bullet(Vector2 playerPosition, int direction) : Object()
 	{
 		std::string texturePath = "resources/image.png";
 		Vector2 size = { 1000, 1000 };
@@ -20,6 +21,7 @@ public:
 		_transform->position = { playerPosition };
 		_transform->scale = Vector2(0.1f, 0.1f);
 		_transform->rotation = 0.f;
+		directionBullet = direction;
 
 	}
 

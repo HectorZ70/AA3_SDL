@@ -15,11 +15,20 @@ enum class PositionRelative
 	INVALID
 };
 
+enum class Rotation
+{
+	LEFT = 0,
+	UP = 1,
+	DOWN = 2,
+	RIGHT = 3
+};
+
 class Turret : public Object
 {
 	Vector2* currentPlayerPosition = nullptr;
 	Vector2 anteriorPlayerPosition;
 	PositionRelative upDown;
+	int rotation = 0;
 public:
 	Turret(Vector2* positionPlayer, PositionRelative upOrDown) : Object() //DO not pass by copy, it will break it
 	{

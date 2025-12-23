@@ -42,6 +42,23 @@ void Turret::Rotate()
 			if (_transform->rotation < 270)
 				_transform->rotation += ROTATION;
 			anteriorPlayerPosition.x = currentPlayerPosition->x;
+
+			if (_transform->rotation > 180)
+			{
+				rotation = 3;
+			}
+			else if (_transform->rotation < 180)
+			{
+				rotation = 0;
+				std::cout << "B" << std::endl;
+			}
+			else
+			{
+				rotation = 1;
+				std::cout << "B" << std::endl;
+			}
+
+			
 		}
 
 		if (currentPlayerPosition->x <= anteriorPlayerPosition.x - OFFSET)
@@ -49,6 +66,13 @@ void Turret::Rotate()
 			if (_transform->rotation > 90)
 				_transform->rotation -= ROTATION;
 			anteriorPlayerPosition.x = currentPlayerPosition->x;
+
+			if (_transform->rotation > 180)
+				rotation = 3;
+			else if (_transform->rotation < 180)
+				rotation = 0;
+			else
+				rotation = 1;
 		}
 	}
 	else if (upDown == PositionRelative::DOWN)
@@ -58,6 +82,14 @@ void Turret::Rotate()
 			if (_transform->rotation > -90)
 				_transform->rotation -= ROTATION;
 			anteriorPlayerPosition.x = currentPlayerPosition->x;
+
+			if (_transform->rotation > -90)
+				rotation = 0;
+			else if (_transform->rotation == 45)
+				rotation = 3;
+			else if(_transform->rotation <= 0)
+				rotation = 2;
+			std::cout << _transform->rotation << std::endl;
 		}
 
 		if (currentPlayerPosition->x <= anteriorPlayerPosition.x - OFFSET)
@@ -65,13 +97,21 @@ void Turret::Rotate()
 			if (_transform->rotation < 90)
 				_transform->rotation += ROTATION;
 			anteriorPlayerPosition.x = currentPlayerPosition->x;
+
+			if (_transform->rotation > -90)
+				rotation = 0;
+			else if (_transform->rotation == 45)
+				rotation = 2;
+			else if (_transform->rotation <= 0)
+				rotation = 3;
+
 		}
 	}
 }
 
 void Turret::Shoot()
 {
-	Bullet* bullet = new Bullet(_transform->position);
+	Bullet* bullet = new Bullet(_transform->position, rotation);
 	SPAWNER.SpawnObject(bullet);
 }
 

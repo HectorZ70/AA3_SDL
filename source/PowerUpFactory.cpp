@@ -40,8 +40,6 @@ void PowerUpFactory::Update()
 	Object::Update();
 }
 
-
-//GameplayLogic, if it was hit by bullet this happens
 void PowerUpFactory::ChangePowerUp(PowerUp* powerUp)
 {
 	std::srand(std::time(nullptr));
