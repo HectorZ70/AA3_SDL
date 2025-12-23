@@ -1,123 +1,93 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Archivos de origen">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
-    </Filter>
-    <Filter Include="Archivos de encabezado">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
-    </Filter>
-    <Filter Include="Archivos de recursos">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
-    </Filter>
+    <ClCompile Include="source\1000Points.cpp" />
+    <ClCompile Include="source\AABB.cpp" />
+    <ClCompile Include="source\Amoeba.cpp" />
+    <ClCompile Include="source\Background.cpp" />
+    <ClCompile Include="source\Beholder.cpp" />
+    <ClCompile Include="source\BioTitan.cpp" />
+    <ClCompile Include="source\Borders.cpp" />
+    <ClCompile Include="source\Bubble.cpp" />
+    <ClCompile Include="source\Bullet.cpp" />
+    <ClCompile Include="source\Button.cpp" />
+    <ClCompile Include="source\Cannons.cpp" />
+    <ClCompile Include="source\Chomper.cpp" />
+    <ClCompile Include="source\Circler.cpp" />
+    <ClCompile Include="source\Enemy.cpp" />
+    <ClCompile Include="source\Game.cpp" />
+    <ClCompile Include="source\Gameplay.cpp" />
+    <ClCompile Include="source\HorizontalMedusa.cpp" />
+    <ClCompile Include="source\ImageRenderer.cpp" />
+    <ClCompile Include="source\IncreaseValocity.cpp" />
+    <ClCompile Include="source\IncreaseVelocity.cpp" />
+    <ClCompile Include="source\InputManager.cpp" />
+    <ClCompile Include="source\KillerWhale.cpp" />
+    <ClCompile Include="source\Laser.cpp" />
+    <ClCompile Include="source\main.cpp" />
+    <ClCompile Include="source\PowerUpFactory.cpp" />
+    <ClCompile Include="source\PowerUps.cpp" />
+    <ClCompile Include="source\RenderManager.cpp" />
+    <ClCompile Include="source\ReplenishEnergyLaser.cpp" />
+    <ClCompile Include="source\ReplenishingEnergyCannon.cpp" />
+    <ClCompile Include="source\ReplenishShield.cpp" />
+    <ClCompile Include="source\RigidBody.cpp" />
+    <ClCompile Include="source\Scene.cpp" />
+    <ClCompile Include="source\SceneManager.cpp" />
+    <ClCompile Include="source\Spawner.cpp" />
+    <ClCompile Include="source\SpawnTwinTurrets.cpp" />
+    <ClCompile Include="source\Player.cpp" />
+    <ClCompile Include="source\TextObject.cpp" />
+    <ClCompile Include="source\TextRenderer.cpp" />
+    <ClCompile Include="source\Transform.cpp" />
+    <ClCompile Include="source\Turrets.cpp" />
+    <ClCompile Include="source\VerticalMedusa.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="source\main.cpp">
-      <Filter>Archivos de recursos</Filter>
-    </ClCompile>
-    <ClCompile Include="source\RenderManager.cpp">
-      <Filter>Archivos de recursos</Filter>
-    </ClCompile>
-    <ClCompile Include="source\Transform.cpp">
-      <Filter>Archivos de encabezado</Filter>
-    </ClCompile>
-    <ClCompile Include="source\Game.cpp">
-      <Filter>Archivos de encabezado</Filter>
-    </ClCompile>
-    <ClCompile Include="source\ImageRenderer.cpp">
-      <Filter>Archivos de encabezado</Filter>
-    </ClCompile>
-    <ClCompile Include="source\TestObject.cpp">
-      <Filter>Archivos de encabezado</Filter>
-    </ClCompile>
-    <ClCompile Include="source\InputManager.cpp">
-      <Filter>Archivos de recursos</Filter>
-    </ClCompile>
-    <ClCompile Include="source\AABB.cpp">
-      <Filter>Archivos de encabezado</Filter>
-    </ClCompile>
-    <ClCompile Include="source\RigidBody.cpp">
-      <Filter>Archivos de recursos</Filter>
-    </ClCompile>
-    <ClCompile Include="source\Scene.cpp">
-      <Filter>Archivos de encabezado</Filter>
-    </ClCompile>
-    <ClCompile Include="source\Gameplay.cpp">
-      <Filter>Archivos de encabezado</Filter>
-    </ClCompile>
-    <ClCompile Include="source\SceneManager.cpp">
-      <Filter>Archivos de encabezado</Filter>
-    </ClCompile>
-    <ClCompile Include="source\Spawner.cpp">
-      <Filter>Archivos de recursos</Filter>
-    </ClCompile>
-    <ClCompile Include="source\TextRenderer.cpp">
-      <Filter>Archivos de encabezado</Filter>
-    </ClCompile>
-    <ClCompile Include="source\TextObject.cpp">
-      <Filter>Archivos de encabezado</Filter>
-    </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="source\RenderManager.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="source\Transform.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="source\Renderer.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="source\ImageObject.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="source\Game.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="source\ImageRenderer.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="source\Object.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="source\Vector2.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="source\TestObject.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="source\InputManager.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="source\AABB.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="source\RigidBody.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="source\TimeManager.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="source\Scene.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="source\Gameplay.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="source\SceneManager.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="source\Spawner.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="source\TextRenderer.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="source\TextObject.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
+    <ClInclude Include="source\1000Points.h" />
+    <ClInclude Include="source\AABB.h" />
+    <ClInclude Include="source\Amoeba.h" />
+    <ClInclude Include="source\Background.h" />
+    <ClInclude Include="source\Beholder.h" />
+    <ClInclude Include="source\BioTitan.h" />
+    <ClInclude Include="source\Borders.h" />
+    <ClInclude Include="source\Bubble.h" />
+    <ClInclude Include="source\Bullet.h" />
+    <ClInclude Include="source\Button.h" />
+    <ClInclude Include="source\Cannons.h" />
+    <ClInclude Include="source\Chomper.h" />
+    <ClInclude Include="source\Circler.h" />
+    <ClInclude Include="source\Enemy.h" />
+    <ClInclude Include="source\Game.h" />
+    <ClInclude Include="source\Gameplay.h" />
+    <ClInclude Include="source\HorizontalMedusa.h" />
+    <ClInclude Include="source\ImageObject.h" />
+    <ClInclude Include="source\ImageRenderer.h" />
+    <ClInclude Include="source\IncreaseValocity.h" />
+    <ClInclude Include="source\InputManager.h" />
+    <ClInclude Include="source\KillerWhale.h" />
+    <ClInclude Include="source\Laser.h" />
+    <ClInclude Include="source\MainMenu.h" />
+    <ClInclude Include="source\Object.h" />
+    <ClInclude Include="source\PowerUpFactory.h" />
+    <ClInclude Include="source\PowerUps.h" />
+    <ClInclude Include="source\Renderer.h" />
+    <ClInclude Include="source\RenderManager.h" />
+    <ClInclude Include="source\ReplenishEnergyLaser.h" />
+    <ClInclude Include="source\ReplenishingEnergyCannon.h" />
+    <ClInclude Include="source\ReplenishShield.h" />
+    <ClInclude Include="source\RigidBody.h" />
+    <ClInclude Include="source\Scene.h" />
+    <ClInclude Include="source\SceneManager.h" />
+    <ClInclude Include="source\Spawner.h" />
+    <ClInclude Include="source\SpawnTwinTurrets.h" />
+    <ClInclude Include="source\Player.h" />
+    <ClInclude Include="source\TextObject.h" />
+    <ClInclude Include="source\TextRenderer.h" />
+    <ClInclude Include="source\TimeManager.h" />
+    <ClInclude Include="source\Transform.h" />
+    <ClInclude Include="source\Turrets.h" />
+    <ClInclude Include="source\Vector2.h" />
+    <ClInclude Include="source\VerticalMedusa.h" />
   </ItemGroup>
 </Project>

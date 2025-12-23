@@ -1,15 +1,24 @@
 #pragma once
 #include "Object.h"
-#include "RigidBody.h"
 #include "RenderManager.h"
 #include "InputManager.h"
-#include "ImageRenderer.h"
+#include "Enemy.h"
 
-class Bullet : public Object
+class Bubble : public Enemy
 {
-	int directionBullet;
+	bool finishEnter = false;
+	bool finishCircle = false;
+	int numberOfTimes = 0;
 public:
-	Bullet(Vector2 playerPosition, int direction) : Object()
+	Vector2 center;
+	float radius;
+	float speed;
+	float angle;
+
+	float oldPosY;
+
+
+	Bubble(float posX, float posY) : Enemy()
 	{
 		std::string texturePath = "resources/image.png";
 		Vector2 size = { 1000, 1000 };
@@ -17,23 +26,29 @@ public:
 		_transform = new Transform();
 		_renderer = new ImageRenderer(_transform, texturePath, ofsset, size);
 		_physics = new RigidBody(_transform);
-		_type = ObjectType::BULLET;
-		
 		Vector2 randomPosition = Vector2(rand() % RM->WINDOW_WIDTH, rand() % RM->WINDOW_HEIGHT);
-		_transform->position = { playerPosition };
-		_transform->scale = Vector2(0.1f, 0.1f);
+		_transform->position = { posX, posY };
+		_transform->scale = Vector2(0.5f, 0.5f);
 		_transform->rotation = 0.f;
-		directionBullet = direction;
+		_type = ObjectType::ENEMY;
 
 		_physics->AddCollider(new AABB(
 			_transform->position,
 			_transform->size * _transform->scale
 		));
 
-		_physics->SetVelocity(Vector2(600.f, 0.f));
+		center = { posX, posY };
+		oldPosY = posY;
+		radius = 100.f;
+		speed = 0.05f;
+		angle = 0.f;
 	}
 
 	void Update() override;
 	void Render() override;
+
+	void Move() override;
+	void EnterInScene(int targetPosX) override;
+	void ExitOutScene() override;
 
 };

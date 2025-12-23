@@ -7,6 +7,8 @@
 #include <SDL3/SDL.h>
 #include "RigidBody.h"
 
+enum class ObjectType{PLAYER, BULLET, ENEMY, DEFAULT};
+
 class Object
 {
 private:
@@ -15,6 +17,7 @@ protected:
 	Transform* _transform;
 	Renderer* _renderer = nullptr;
 	RigidBody* _physics;
+	ObjectType _type;
 
 public:
 	Object() 
@@ -48,6 +51,11 @@ public:
 	Transform* GetTransform()
 	{
 		return _transform;
+	}
+
+	ObjectType GetType()
+	{
+		return _type;
 	}
 
 	bool IsPendingDestroy() const

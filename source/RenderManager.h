@@ -20,8 +20,8 @@ public:
 		return &instance;
 	}
 
-	const unsigned int WINDOW_WIDTH = 1360;
-	const unsigned int WINDOW_HEIGHT = 768;
+	const unsigned int WINDOW_WIDTH = 1920;
+	const unsigned int WINDOW_HEIGHT = 1080;
 
 	void Init();
 	void Release();
