@@ -1,4 +1,4 @@
-#include "TestObject.h"
+#include "Player.h"
 #include "Spawner.h"
 
 #include <iostream>
@@ -22,25 +22,25 @@ void Player::Move()
 	if (_transform->position.x >= 0)
 		if (IM->GetEvent(SDLK_A, HOLD))
 		{
-			_transform->position = { _transform->position.x - 5.f  ,_transform->position.y };
+			_transform->position = { _transform->position.x - velocity  ,_transform->position.y };
 		}
 
 	if (_transform->position.x <= RM->WINDOW_WIDTH)
 		if (IM->GetEvent(SDLK_D, HOLD))
 		{
-			_transform->position = { _transform->position.x + 5.f  ,_transform->position.y };
+			_transform->position = { _transform->position.x + velocity  ,_transform->position.y };
 		}
 
 	if (_transform->position.y >= 0)
 		if (IM->GetEvent(SDLK_W, HOLD))
 		{
-			_transform->position = { _transform->position.x ,_transform->position.y - 5.f };
+			_transform->position = { _transform->position.x ,_transform->position.y - velocity };
 		}
 
 	if (_transform->position.y <= RM->WINDOW_HEIGHT)
 		if (IM->GetEvent(SDLK_S, HOLD))
 		{
-			_transform->position = { _transform->position.x ,_transform->position.y + 5.f };
+			_transform->position = { _transform->position.x ,_transform->position.y + velocity };
 		}
 	
 	if (IM->GetEvent(SDLK_J, DOWN))
@@ -51,11 +51,6 @@ void Player::Move()
 
 void Player::Shoot()
 {
-	Vector2 direction = { 1.0f, 0.0f };   
-	float offset = 30.0f;                
-
-	Vector2 spawnPos = _transform->position + direction * offset;
-
-	Bullet* bullet = new Bullet(spawnPos);
+	Bullet* bullet = new Bullet(_transform->position, 3);
 	SPAWNER.SpawnObject(bullet);
 }

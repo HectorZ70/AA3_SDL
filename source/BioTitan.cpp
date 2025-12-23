@@ -20,7 +20,7 @@ void BioTitan::Shoot()
 {
 	if (currentFrame <= frameTime)
 	{
-		Bullet* bullet = new Bullet(_transform->position);
+		Bullet* bullet = new Bullet(_transform->position, 0);
 		SPAWNER.SpawnObject(bullet);
 		currentFrame++;
 	}

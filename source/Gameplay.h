@@ -2,7 +2,7 @@
 #include "Scene.h"
 #include "Spawner.h"
 #include "TextObject.h"
-#include "TestObject.h"
+#include "Player.h"
 #include "Enemy.h"
 #include "Circler.h"
 #include "Borders.h"
@@ -14,7 +14,13 @@
 #include "Amoeba.h"
 #include "Chomper.h"
 #include "Bubble.h"
-
+#include "Turrets.h"
+#include "Laser.h"
+#include "Cannons.h"
+#include "1000Points.h"
+#include "ReplenishShield.h"
+#include "IncreaseValocity.h"
+#include "PowerUpFactory.h"
 
 class Gameplay : public Scene
 {
@@ -40,6 +46,7 @@ public:
 		Background* background = new Background(RM->WINDOW_WIDTH / 2.0f, RM->WINDOW_HEIGHT / 2.0f);
 		Background* background2 = new Background(RM->WINDOW_WIDTH * 1.5f, RM->WINDOW_HEIGHT / 2.0f);
 		Player* player = new Player;
+		PowerUpFactory* powerUp = new PowerUpFactory({100, 200}, 6, &player->GetScore(), &player->GetShield(), &player->GetEnergyLaserAmmunation(), &player->GetEnergyCannonAmmunation(), &player->GetVelocity(), player);
 
 		background->SetBackground(background2);
 		background2->SetBackground(background);
@@ -69,7 +76,6 @@ public:
 			//c->Render();
 		}
 		player->Render();
-
 	}
 
 	void OnExit() { Scene::OnExit(); }
