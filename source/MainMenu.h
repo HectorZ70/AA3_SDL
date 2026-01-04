@@ -15,10 +15,6 @@ public:
 		Button* playButton = new Button([]()
 			{
 				SM.SetNextScene("Gameplay");
-
-				
-				
-				
 			},
 			400.0f, 
 			300.0f 
@@ -31,7 +27,6 @@ public:
 		Button* optionsButton = new Button([]()
 			{
 				SM.SetNextScene("ScoreMenu");
-
 			},
 			400.0f,
 			600.0f
@@ -42,7 +37,7 @@ public:
 		TextObject* textThird = new TextObject("EXIT", 400.f, 900.f);
 		Button* exitButton = new Button([]()
 			{
-				SM.SetNextScene("Gameplay");
+				//TODO: We need to find a way to close the game without any memory leaks!
 
 			},
 			400.0f,

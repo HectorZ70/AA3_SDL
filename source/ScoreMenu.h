@@ -4,6 +4,9 @@
 #include "TextObject.h"
 #include "Button.h"
 #include "SceneManager.h"
+#define FIRSTPOS 300.f
+#define SECONDPOS 400.f
+#define THIRDPOS 500.f
 
 class ScoreMenu : public Scene
 {
@@ -12,7 +15,7 @@ public:
 	std::string name1 = "Hector ";
 	std::string name2 = "Gerard ";
 	std::string name3 = "JIJIJIJA ";
-
+ 
 	int highScore1 = 1093;
 	int highScore2 = 570;
 	int highScore3 = 15;
@@ -21,18 +24,65 @@ public:
 	std::string score2 = std::to_string(highScore2);
 	std::string score3 = std::to_string(highScore3);
 
+	bool newHighScore = true; //TODO: When we finish score and make a gameover we need to ask the player to type their name, we will activate this one variable with a xml
+	//For debugging porpuses we let this newHighscore in true, but normally it will be false except when player makes a new Highscore
+
+	TextObject* createHighScore(const std::string& name, int score, int yPos)
+	{
+		return new TextObject(
+			name + " " + std::to_string(score),
+			RM->WINDOW_WIDTH / 2,
+			yPos
+		);
+	}
+
+
 	void OnEnter() override
 	{
-		TextObject* text = new TextObject("SCORE", RM->WINDOW_WIDTH/2, 100.f);
 
-		TextObject* highScore1 = new TextObject(name1 + score1, RM->WINDOW_WIDTH / 2, 300.f);
-		TextObject* highScore2 = new TextObject(name2 + score2, RM->WINDOW_WIDTH / 2, 400.f);
-		TextObject* highScore3 = new TextObject(name3 + score3, RM->WINDOW_WIDTH / 2, 500.f);
+		TextObject* trueHighScore1 = new TextObject(name1 + score1, RM->WINDOW_WIDTH / 2, FIRSTPOS);
+		TextObject* trueHighScore2 = new TextObject(name2 + score2, RM->WINDOW_WIDTH / 2, SECONDPOS);
+		TextObject* trueHighScore3 = new TextObject(name3 + score3, RM->WINDOW_WIDTH / 2, THIRDPOS);
+
+		TextObject* text = new TextObject("HIGHSCORE", RM->WINDOW_WIDTH/2, 100.f);
+		if (newHighScore)
+		{
+			std::string name;
+			int score;
+			std::cin >> name;
+			std::cin >> score;
+
+			if (score > highScore1)
+			{
+				trueHighScore1 = createHighScore(name, score, FIRSTPOS);
+			}
+			else if (score > highScore2)
+			{
+				trueHighScore2 = createHighScore(name, score, SECONDPOS);
+			}
+			else if (score > highScore3)
+			{
+				trueHighScore3 = createHighScore(name, score, THIRDPOS);
+			}
+		}
+
+		Button* returnToMainMenu = new Button([]()
+			{
+				SM.SetNextScene("MainMenu");
+
+			},
+			RM->WINDOW_WIDTH/2,
+			900.0f
+		);
+		TextObject* buttonText = new TextObject("Return", RM->WINDOW_WIDTH / 2, 900.f);
 
 		_ui.push_back(text);
-		_ui.push_back(highScore1);
-		_ui.push_back(highScore2);
-		_ui.push_back(highScore3);
+		_ui.push_back(trueHighScore1);
+		_ui.push_back(trueHighScore2);
+		_ui.push_back(trueHighScore3);
+		_ui.push_back(returnToMainMenu);
+		_ui.push_back(buttonText);
+
 	}
 
 	void OnExit() override
