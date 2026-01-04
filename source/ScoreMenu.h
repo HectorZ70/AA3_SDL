@@ -4,6 +4,8 @@
 #include "TextObject.h"
 #include "Button.h"
 #include "SceneManager.h"
+#include "fstream"
+
 #define FIRSTPOS 300.f
 #define SECONDPOS 400.f
 #define THIRDPOS 500.f
@@ -11,6 +13,9 @@
 class ScoreMenu : public Scene
 {
 public:
+
+
+
 	ScoreMenu() = default;
 	std::string name1 = "Hector ";
 	std::string name2 = "Gerard ";
@@ -35,6 +40,18 @@ public:
 
 	void OnEnter() override
 	{
+
+		std::ifstream scoreFile("source/Score.txt");
+
+		if (!scoreFile.is_open()) {
+			std::cerr << "Couldn't open the file or doesn't exist" << std::endl;
+		}
+
+		std::string line;
+		while (std::getline(scoreFile, line)) {
+			std::cout << line << std::endl;
+		}
+
 
 		TextObject* trueHighScore1 = createHighScore(name1, highScore1, FIRSTPOS);
 		TextObject* trueHighScore2 = createHighScore(name2, highScore2, SECONDPOS);
