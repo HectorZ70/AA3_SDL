@@ -13,7 +13,7 @@ public:
 		_onClick = onClick;
 
 		_transform->position = { xPos, yPos };
-		_transform->scale = { 1.0f, 1.0f };
+		_transform->scale = { 1.f, 1.f };
 
 		_physics->AddCollider(new AABB(_transform->position, _transform->size));
 	}

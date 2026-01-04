@@ -5,6 +5,7 @@
 #include "SceneManager.h"
 #include "Gameplay.h"
 #include "MainMenu.h"
+#include "ScoreMenu.h"
 
 #include "RenderManager.h"
 
@@ -19,6 +20,7 @@ void Game::Init()
 	//Carga de escenas
 	assert(SM.AddScene("MainMenu", new MainMenu()));
 	assert(SM.AddScene("Gameplay", new Gameplay())); //DONA ERROR
+	assert(SM.AddScene("ScoreMenu", new ScoreMenu())); //DONA ERROR
 
 	assert(SM.InitFirstScene("MainMenu"));
 

@@ -52,6 +52,7 @@
     <ClCompile Include="source\RigidBody.cpp" />
     <ClCompile Include="source\Scene.cpp" />
     <ClCompile Include="source\SceneManager.cpp" />
+    <ClCompile Include="source\ScoreMenu.cpp" />
     <ClCompile Include="source\Spawner.cpp" />
     <ClCompile Include="source\SpawnTwinTurrets.cpp" />
     <ClCompile Include="source\Player.cpp" />
@@ -97,6 +98,7 @@
     <ClInclude Include="source\RigidBody.h" />
     <ClInclude Include="source\Scene.h" />
     <ClInclude Include="source\SceneManager.h" />
+    <ClInclude Include="source\ScoreMenu.h" />
     <ClInclude Include="source\Spawner.h" />
     <ClInclude Include="source\SpawnTwinTurrets.h" />
     <ClInclude Include="source\Player.h" />
