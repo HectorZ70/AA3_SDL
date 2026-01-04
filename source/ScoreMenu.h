@@ -20,11 +20,7 @@ public:
 	int highScore2 = 570;
 	int highScore3 = 15;
 
-	std::string score1 = std::to_string(highScore1);
-	std::string score2 = std::to_string(highScore2);
-	std::string score3 = std::to_string(highScore3);
-
-	bool newHighScore = true; //TODO: When we finish score and make a gameover we need to ask the player to type their name, we will activate this one variable with a xml
+	bool newHighScore = false; //TODO: When we finish score and make a gameover we need to ask the player to type their name, we will activate this one variable with a xml
 	//For debugging porpuses we let this newHighscore in true, but normally it will be false except when player makes a new Highscore
 
 	TextObject* createHighScore(const std::string& name, int score, int yPos)
@@ -40,9 +36,9 @@ public:
 	void OnEnter() override
 	{
 
-		TextObject* trueHighScore1 = new TextObject(name1 + score1, RM->WINDOW_WIDTH / 2, FIRSTPOS);
-		TextObject* trueHighScore2 = new TextObject(name2 + score2, RM->WINDOW_WIDTH / 2, SECONDPOS);
-		TextObject* trueHighScore3 = new TextObject(name3 + score3, RM->WINDOW_WIDTH / 2, THIRDPOS);
+		TextObject* trueHighScore1 = createHighScore(name1, highScore1, FIRSTPOS);
+		TextObject* trueHighScore2 = createHighScore(name2, highScore2, SECONDPOS);
+		TextObject* trueHighScore3 = createHighScore(name3, highScore3, THIRDPOS);
 
 		TextObject* text = new TextObject("HIGHSCORE", RM->WINDOW_WIDTH/2, 100.f);
 		if (newHighScore)
