@@ -36,10 +36,9 @@ public:
 			_transform->size * _transform->scale
 		));
 
-		_physics->SetVelocity(Vector2(600.f, 0.f));
+		_physics->SetVelocity({ 100.0f, 0.0f });
 	}
-
+	
 	void Update() override;
 	void Render() override;
-
 };

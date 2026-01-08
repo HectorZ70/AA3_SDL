@@ -4,17 +4,8 @@
 
 void Bullet::Update()
 {
-	if (directionBullet == PLAYERRIGHT)
-		_transform->position = { _transform->position.x + PLAYERVELOCITY  ,_transform->position.y };
-
-	if (directionBullet == PLAYERDOWN)
-		_transform->position = { _transform->position.x, _transform->position.y - PLAYERVELOCITY };
-
-	if (directionBullet == PLAYERUP)
-		_transform->position = { _transform->position.x, _transform->position.y + PLAYERVELOCITY };
-
-	if (directionBullet == PLAYERLEFT)
-		_transform->position = { _transform->position.x - PLAYERVELOCITY  ,_transform->position.y };
+	// Usar RigidBody no transforms.
+	_physics->AddForce({ 100.0f,0.0f });
 
 	Object::Update();
 }
