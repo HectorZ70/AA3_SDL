@@ -4,19 +4,17 @@
 
 void Bullet::Update()
 {
-	_transform->position = { _transform->position.x + 20.f,_transform->position.y };
+	if (directionBullet == PLAYERRIGHT)
+		_transform->position = { _transform->position.x + PLAYERVELOCITY  ,_transform->position.y };
 
-	if (directionBullet == 3)
-		_transform->position = { _transform->position.x + 20.f  ,_transform->position.y };
+	if (directionBullet == PLAYERDOWN)
+		_transform->position = { _transform->position.x, _transform->position.y - PLAYERVELOCITY };
 
-	if (directionBullet == 1)
-		_transform->position = { _transform->position.x, _transform->position.y - 20.f};
+	if (directionBullet == PLAYERUP)
+		_transform->position = { _transform->position.x, _transform->position.y + PLAYERVELOCITY };
 
-	if (directionBullet == 2)
-		_transform->position = { _transform->position.x, _transform->position.y + 20.f };
-
-	if (directionBullet == 0)
-		_transform->position = { _transform->position.x - 20.f  ,_transform->position.y };
+	if (directionBullet == PLAYERLEFT)
+		_transform->position = { _transform->position.x - PLAYERVELOCITY  ,_transform->position.y };
 
 	Object::Update();
 }

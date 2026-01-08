@@ -5,6 +5,12 @@
 #include "InputManager.h"
 #include "ImageRenderer.h"
 
+#define PLAYERDOWN 1
+#define PLAYERUP 2
+#define PLAYERRIGHT 3
+#define PLAYERLEFT 0
+#define PLAYERVELOCITY 20.0f
+
 class Bullet : public Object
 {
 	int directionBullet;
