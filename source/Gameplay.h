@@ -39,6 +39,13 @@ public:
 		}
 		Bubble* bubble = new Bubble(1024, 300);
 		Amoeba* amoeba = new Amoeba(0, 100, false, 0, 0);
+		Circler* circler = new Circler(1024, 500);
+		HorizontalMedusa* horizontalMedusa = new HorizontalMedusa(1024, 300);
+		VerticalMedusa* vertitalMedusa = new VerticalMedusa(1024, 300);
+		KillerWhale* killerWhale = new KillerWhale(1024, 1080, CELLING);
+		Beholder* beholder = new Beholder(900, 1000);
+		Chomper* chomper = new Chomper(300, 600);
+
 		Border* borderUp = new Border(RM->WINDOW_WIDTH / 2.0f, RM->WINDOW_HEIGHT);
 		Border* borderUp2 = new Border(RM->WINDOW_WIDTH * 1.5f, RM->WINDOW_HEIGHT);
 		Border* borderDown = new Border(RM->WINDOW_WIDTH / 2.0f,0);
@@ -64,6 +71,14 @@ public:
 		SPAWNER.SpawnObject(borderDown);
 		SPAWNER.SpawnObject(borderDown2);
 		SPAWNER.SpawnObject(bubble);
+		SPAWNER.SpawnObject(amoeba);
+		SPAWNER.SpawnObject(circler);
+		SPAWNER.SpawnObject(horizontalMedusa);
+		SPAWNER.SpawnObject(vertitalMedusa);
+		SPAWNER.SpawnObject(killerWhale);
+		SPAWNER.SpawnObject(beholder);
+		SPAWNER.SpawnObject(chomper);
+
 		SPAWNER.SpawnObject(player);
 
 		borderUp->Render();
@@ -71,6 +86,14 @@ public:
 		background->Render();
 		background2->Render();
 		bubble->Render();
+		amoeba->Render();
+		circler->Render();
+		horizontalMedusa->Render();
+		vertitalMedusa->Render();
+		killerWhale->Render();
+		beholder->Render();
+		chomper->Render();
+
 		for (Chomper* c : chompers)
 		{
 			//c->Render();
