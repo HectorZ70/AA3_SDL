@@ -41,10 +41,15 @@ public:
 	void OnEnter() override
 	{
 
-		std::ifstream scoreFile("source/Score.txt");
-
-		if (!scoreFile.is_open()) {
-			std::cerr << "Couldn't open the file or doesn't exist" << std::endl;
+		std::ifstream scoreFile("resources/ScoreMenu.xml");
+		try {
+			if (!scoreFile.is_open()) {
+				//std::cerr << "Couldn't open the file or doesn't exist" << std::endl;
+				throw std::exception("Unable to open ScoreMenu.xml");
+			}
+		}
+		catch(std::exception e){
+			std::cout << "Error: " << e.what();
 		}
 
 		std::string line;
