@@ -9,6 +9,8 @@
 #include "Chomper.h"
 #include "Bubble.h"
 #include "Spawner.h"
+#include <thread>
+#include <chrono>
 
 
 class WaveManager 
@@ -24,27 +26,53 @@ public:
 
 	int WaveSize() { return enemies.size(); }
 
+	void SpawnWave()
+	{
+		std::thread waveThread([this]() {
+			std::this_thread::sleep_for(std::chrono::seconds(3));
+			UpdateNumberOfWave();
+			});
+		waveThread.detach();
+	}
+
+	void CleanEnemies()
+	{
+		for (Enemy* e : enemies) {
+			delete e;
+		}
+		enemies.clear();
+	}
+
 	void UpdateNumberOfWave()
 	{
-
+		
 		switch (numberOfWave)
 		{
 		case 1:
 			if (anteriorWave != numberOfWave)
 			{
 				KillerWhale* chomper = new KillerWhale(100, 300, CELLING);
-				VerticalMedusa* vMedusa = new VerticalMedusa(100, 400);
-				HorizontalMedusa* hMedusa = new HorizontalMedusa(300, 400);
+				Circler* circler = new Circler(100, 400);
 
 				enemies.push_back(chomper);
-				enemies.push_back(vMedusa);
-				enemies.push_back(hMedusa);
+				enemies.push_back(circler);
 				anteriorWave = numberOfWave;
 			}
 			anteriorWave = numberOfWave;
 			break;
 		case 2:
+			if (anteriorWave != numberOfWave)
+			{
+				Beholder* beholder = new Beholder(100, 300);
+				VerticalMedusa* vMedusa = new VerticalMedusa(700, 400);
+				
 
+				enemies.push_back(beholder);
+				enemies.push_back(vMedusa);
+				
+				anteriorWave = numberOfWave;
+			}
+			anteriorWave = numberOfWave;
 			break;
 		case 3:
 
@@ -53,5 +81,6 @@ public:
 
 			break;
 		}
+		numberOfWave++;
 	}
 };
