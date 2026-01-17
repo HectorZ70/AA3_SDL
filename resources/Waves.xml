@@ -1,0 +1,7 @@
+<waves>
+	<wave number="1">
+		<Enemy type="KillerWhale" x="100" y="300"/>
+		<Enemy type="VerticalMedusa" x="100" y="400"/>
+		<Enemy type="HorizontalMedusa" x="300" y="400"/>
+	</wave>
+</waves>
