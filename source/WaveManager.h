@@ -116,7 +116,7 @@ public:
 				e = new Bubble(x, y);
 			else if (type == "BioTitan")
 				e = new BioTitan();
-			//TODO: Figure out why the boss aparently breaks the game
+			//TODO: Figure out why the boss breaks the code
 
 			if (e) enemies.push_back(e);
 		}

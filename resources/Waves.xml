@@ -16,6 +16,5 @@
 		<Enemy type="Amoeba" x="19020" y="400"/>
 	</wave>
 	<wave number="5">
-		<Enemy type="BiotTitan"/>
 	</wave>
 </waves>
