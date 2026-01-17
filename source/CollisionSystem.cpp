@@ -1,26 +1,35 @@
 #include "CollisionSystem.h"
+#include <iostream>
 
 void CollisionSystem::Update(std::vector<Object*>& objects)
 {
     const size_t size = objects.size();
 
-    for (size_t i = 0; i < size; i++)
-    {
-        Object* a = objects[i];
-        if (a->IsPendingDestroy()) continue;
-        if (!a->GetRigidBody()) continue;
+	for (int i = 0; i < size; i++)
+	{
+		for (int j = i + 1; j < objects.size(); j++)
+		{
+			if ((objects[i]->GetType() == ObjectType::BULLET && objects[j]->GetType() == ObjectType::BULLET)
+				|| (objects[i]->GetType() == ObjectType::ENEMY && objects[j]->GetType() == ObjectType::ENEMY)
+				|| (objects[i]->GetType() == ObjectType::PLAYER && objects[j]->GetType() == ObjectType::BULLET)
+				|| (objects[i]->GetType() == ObjectType::BULLET && objects[j]->GetType() == ObjectType::PLAYER))
+				continue;
 
-        for (size_t j = i + 1; j < size; j++)
-        {
-            Object* b = objects[j];
-            if (b->IsPendingDestroy()) continue;
-            if (!b->GetRigidBody()) continue;
+			if (objects[i]->GetRigidBody()->CheckCollision(objects[j]->GetRigidBody()))
+			{
+					std::cout << "COLLISION\n";
+					objects[i]->OnCollision(objects[j]);
+					objects[j]->OnCollision(objects[i]);
+			}
+		}
+	}
 
-            if (a->GetRigidBody()->CheckCollision(b->GetRigidBody()))
-            {
-                a->OnCollision(b);
-                b->OnCollision(a);
-            }
+	for (int i = objects.size() - 1; i >= 0; i--)
+	{
+		if (objects[i]->IsPendingDestroy())
+		{
+			delete objects[i];
+			objects.erase(objects.begin() + i);
 		}
 	}
 }

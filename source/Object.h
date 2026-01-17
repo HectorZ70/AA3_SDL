@@ -22,7 +22,7 @@ protected:
 public:
 	Object();
 
-	~Object();
+	virtual ~Object();
 
 	virtual void Update();
 	

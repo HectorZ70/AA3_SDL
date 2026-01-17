@@ -1,6 +1,6 @@
 #pragma once
 #include <Vector>
-#include "Object.h"
+#include "ImageObject.h"
 #include "RenderManager.h"
 #include "InputManager.h"
 #include "ImageRenderer.h"
@@ -8,7 +8,7 @@
 #define ENERGYLASERMAX 100
 #define SHIELDMAX 100
 
-class Player : public Object
+class Player : public ImageObject
 {
 
 public:
@@ -17,13 +17,14 @@ public:
 	int energyLaser = 1;
 	float velocity;
 	int shield;
-	Player() : Object()
+	std::string texturePath = "resources/image.png";
+	Vector2 size = { 1000, 1000 };
+	Vector2 offset = { 0, 0 };
+	Player() : ImageObject(texturePath, offset, size)
 	{
-		std::string texturePath = "resources/image.png";
-		Vector2 size = { 1000, 1000 };
-		Vector2 ofsset = { 0, 0 };
+		
 		_transform = new Transform();
-		_renderer = new ImageRenderer(_transform, texturePath, ofsset, size);
+		_renderer = new ImageRenderer(_transform, texturePath, offset, size);
 		Vector2 randomPosition = Vector2(rand() % RM->WINDOW_WIDTH, rand() % RM->WINDOW_HEIGHT);
 		_transform->position = { 100, 100 };
 		_transform->scale = Vector2(0.5f, 0.5f);

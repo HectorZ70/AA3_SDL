@@ -1,6 +1,6 @@
 #include "Object.h"
 
-Object::Object()
+Object::Object() 
 {
 	_transform = new Transform();
 	_physics = new RigidBody(_transform);

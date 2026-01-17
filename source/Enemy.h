@@ -1,10 +1,10 @@
 #pragma once
-#include "Object.h"
+#include "ImageObject.h"
 #include "RenderManager.h"
 #include "InputManager.h"
 #include "ImageRenderer.h"
 
-class Enemy : public Object
+class Enemy : public ImageObject
 {
 	bool finishEnter = false;
 	bool finishCircle = false;
@@ -17,14 +17,13 @@ public:
 
 	float oldPosY;
 
+	std::string texturePath = "resources/image.png";
+	Vector2 size = { 128, 128 };
+	Vector2 offset = { 0,0 };
 
-	Enemy() : Object()
+	Enemy() : ImageObject(texturePath, offset, size)
 	{
 		_type = ObjectType::ENEMY;
-
-		std::string texturePath = "resources/image.png";
-		Vector2 size = { 128, 128 };
-		Vector2 offset = { 0,0 };
 
 		_renderer = new ImageRenderer(_transform, texturePath, offset, size);
 
