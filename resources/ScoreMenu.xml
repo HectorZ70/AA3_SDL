@@ -1,0 +1,5 @@
+<ScoreMenu>
+	<Player id="1" x="100" y="100"/>
+	<Player id="2" x="100" y="100"/>
+	<Player id="3" x="100" y="100"/>
+</ScoreMenu>
