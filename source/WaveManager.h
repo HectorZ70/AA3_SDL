@@ -25,25 +25,23 @@ class WaveManager
 	std::vector<Enemy*> enemies;
 	rapidxml::xml_document<> wave;
 	std::ifstream file;
+	std::string xmlContent;
 
 public:
 	WaveManager(int waveNumberStart) 
 	{	
 		numberOfWave = waveNumberStart;
 		anteriorWave = waveNumberStart - 1; 
-		file.open("resources/Waves.xml");
-		
-		try
-		{
-			if (!file.is_open())
-			{
-				throw std::exception("Unable to open Waves.xml");
-			}
+		std::ifstream file("resources/Waves.xml");
+		if (!file.is_open()) {
+			std::cout << "Error: Unable to open Waves.xml" << std::endl;
+			return;
 		}
-		catch (std::exception c)
-		{
-			std::cout << "Error: " << c.what() << std::endl;
-		}
+
+		xmlContent.assign((std::istreambuf_iterator<char>(file)),
+			std::istreambuf_iterator<char>());
+
+		wave.parse<0>(&xmlContent[0]);
 	}
 
 	std::vector<Enemy*>& GetEnemyWave() { return enemies; }
@@ -70,41 +68,46 @@ public:
 	void UpdateNumberOfWave()
 	{
 		
-		switch (numberOfWave)
+		rapidxml::xml_node<>* rootNode = wave.first_node("waves");
+		if (!rootNode) return;
+
+		for (rapidxml::xml_node<>* waveNode = rootNode->first_node("wave");
+			waveNode;
+			waveNode = waveNode->next_sibling("wave"))
 		{
-		case 1:
-			if (anteriorWave != numberOfWave)
-			{
-				KillerWhale* chomper = new KillerWhale(100, 300, CELLING);
-				Circler* circler = new Circler(100, 400);
-
-				enemies.push_back(chomper);
-				enemies.push_back(circler);
-				anteriorWave = numberOfWave;
+			if (std::stoi(waveNode->first_attribute("number")->value()) == numberOfWave) {
+				SpawnEnemiesFromWave(waveNode);
+				break;
 			}
-			anteriorWave = numberOfWave;
-			break;
-		case 2:
-			if (anteriorWave != numberOfWave)
-			{
-				Beholder* beholder = new Beholder(100, 300);
-				VerticalMedusa* vMedusa = new VerticalMedusa(700, 400);
-				
-
-				enemies.push_back(beholder);
-				enemies.push_back(vMedusa);
-				
-				anteriorWave = numberOfWave;
-			}
-			anteriorWave = numberOfWave;
-			break;
-		case 3:
-
-			break;
-		case 4:
-
-			break;
 		}
+
 		numberOfWave++;
+	}
+
+	void SpawnEnemiesFromWave(rapidxml::xml_node<>* waveNode) {
+		for (rapidxml::xml_node<>* enemyNode = waveNode->first_node("Enemy");
+			enemyNode;
+			enemyNode = enemyNode->next_sibling("Enemy"))
+		{
+			std::string type = enemyNode->first_attribute("type")->value();
+			int x = std::stoi(enemyNode->first_attribute("x")->value());
+			int y = std::stoi(enemyNode->first_attribute("y")->value());
+
+			Enemy* e = nullptr;
+
+			if (type == "KillerWhale")
+				e = new KillerWhale(x, y, CELLING);
+			else if (type == "VerticalMedusa")
+				e = new VerticalMedusa(x, y);
+			else if (type == "HorizontalMedusa")
+				e = new HorizontalMedusa(x, y);
+			else if (type == "Beholder")
+				e = new Beholder(x, y);
+			else if (type == "Circler")
+				e = new Circler(x, y);
+			// ...añade todos los tipos que tengas
+
+			if (e) enemies.push_back(e);
+		}
 	}
 };
