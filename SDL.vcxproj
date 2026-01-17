@@ -67,6 +67,8 @@
     <ClInclude Include="source\1000Points.h" />
     <ClInclude Include="source\AABB.h" />
     <ClInclude Include="source\Amoeba.h" />
+    <ClInclude Include="source\AtomicWrapper.h" />
+    <ClInclude Include="source\AudioManager.h" />
     <ClInclude Include="source\Background.h" />
     <ClInclude Include="source\Beholder.h" />
     <ClInclude Include="source\BioTitan.h" />
@@ -103,6 +105,7 @@
     <ClInclude Include="source\Spawner.h" />
     <ClInclude Include="source\SpawnTwinTurrets.h" />
     <ClInclude Include="source\Player.h" />
+    <ClInclude Include="source\Stream.h" />
     <ClInclude Include="source\TextObject.h" />
     <ClInclude Include="source\TextRenderer.h" />
     <ClInclude Include="source\TimeManager.h" />
