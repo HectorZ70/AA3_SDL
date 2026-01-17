@@ -5,10 +5,12 @@
 class TextObject : public Object
 {
 public:
-	TextObject(std::string text) : Object()
+	TextObject(std::string text, float xPos, float yPos) : Object()
 		{
 		_renderer = new TextRenderer(_transform, text);
-		_renderer->SetColor({ 255 , 0 , 0, 0xFF });
+		_renderer->SetColor({ 255 , 255 , 255, 0xFF });
+		_transform->position = { xPos, yPos };
+		_transform->rotation = { 0.f };
 		}
 		void SetText(std::string text)
 		{
