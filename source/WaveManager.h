@@ -33,9 +33,15 @@ public:
 		numberOfWave = waveNumberStart;
 		anteriorWave = waveNumberStart - 1; 
 		std::ifstream file("resources/Waves.xml");
-		if (!file.is_open()) {
-			std::cout << "Error: Unable to open Waves.xml" << std::endl;
-			return;
+		try
+		{
+			if (!file.is_open()) {
+				throw std::exception("Unable to open Waves.xml");
+			}
+		}
+		catch(std::exception c)
+		{
+			std::cout << "Error: " << c.what() << std::endl;
 		}
 
 		xmlContent.assign((std::istreambuf_iterator<char>(file)),
