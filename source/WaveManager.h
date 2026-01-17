@@ -8,6 +8,7 @@
 #include "Amoeba.h"
 #include "Chomper.h"
 #include "Bubble.h"
+#include "BioTitan.h"
 #include "Spawner.h"
 #include <thread>
 #include <chrono>
@@ -111,7 +112,11 @@ public:
 				e = new Beholder(x, y);
 			else if (type == "Circler")
 				e = new Circler(x, y);
-			// ...añade todos los tipos que tengas
+			else if (type == "Bubble")
+				e = new Bubble(x, y);
+			else if (type == "BioTitan")
+				e = new BioTitan();
+			//TODO: Figure out why the boss breaks the code
 
 			if (e) enemies.push_back(e);
 		}
