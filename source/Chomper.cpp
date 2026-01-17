@@ -14,7 +14,7 @@ void Chomper::Update()
 		else
 			Move();
 	}
-	std::cout << _transform->position.x << " " << _transform->position.y << std::endl;
+	//std::cout << _transform->position.x << " " << _transform->position.y << std::endl;
 	Chomper::Render();
 }
 

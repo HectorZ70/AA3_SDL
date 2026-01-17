@@ -4,3 +4,8 @@
 #include <cmath>
 #include <iomanip>
 
+void Enemy::OnCollision(Object* other) 
+{
+	if (other->GetType() == ObjectType::BULLET)
+		Destroy();
+}
