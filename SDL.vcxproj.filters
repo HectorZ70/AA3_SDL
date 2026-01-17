@@ -42,6 +42,7 @@
     <ClCompile Include="source\Transform.cpp" />
     <ClCompile Include="source\Turrets.cpp" />
     <ClCompile Include="source\VerticalMedusa.cpp" />
+    <ClCompile Include="source\WaveManager.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\1000Points.h" />
@@ -89,5 +90,6 @@
     <ClInclude Include="source\Turrets.h" />
     <ClInclude Include="source\Vector2.h" />
     <ClInclude Include="source\VerticalMedusa.h" />
+    <ClInclude Include="source\WaveManager.h" />
   </ItemGroup>
 </Project>
