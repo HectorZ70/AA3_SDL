@@ -41,4 +41,5 @@ public:
 	
 	void Update() override;
 	void Render() override;
+	virtual void OnCollision(Object* other);
 };

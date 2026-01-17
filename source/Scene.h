@@ -1,6 +1,7 @@
 #pragma once
 #include "Spawner.h"
 #include "Object.h"
+#include "CollisionSystem.h"
 #include <vector>
 
 
@@ -9,6 +10,7 @@ class Scene
 protected:
 	std::vector<Object*> _objects;
 	std::vector<Object*> _ui;
+	CollisionSystem _collisionSystem;
 
 public:
 	Scene() = default;
@@ -47,7 +49,9 @@ public:
 		for (Object* u : _ui)
 			u->Update();
 
+		_collisionSystem.Update(_objects);
 
+		/*
 		int size = _objects.size();
 		for (int i = 0; i < size; i++)
 		{
@@ -96,7 +100,7 @@ public:
 				_objects.erase(_objects.begin() + i);
 			}
 		}
-
+		*/
 	}
 
 	virtual void Render()

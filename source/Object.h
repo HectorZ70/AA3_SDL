@@ -20,51 +20,26 @@ protected:
 	ObjectType _type;
 
 public:
-	Object() 
-	{ 
-		_transform = new Transform();
-		_physics = new RigidBody(_transform);
-	}
+	Object();
 
-	~Object()
-	{
-		delete _transform;
-		delete _renderer;
-		delete _physics;
-	}
+	~Object();
 
-	virtual void Update() 
-	{ 
-		if (_physics != nullptr)
-			_physics->Update(0.02f);
-
-		_renderer->Update(0.02f);
-	}
+	virtual void Update();
 	
-	RigidBody* GetRigidBody() { return _physics; }
+	RigidBody* GetRigidBody();
 
-	virtual void Render() 
-	{ 
-		_renderer->Render(); 
-	}
+	virtual void Render();
 
-	Transform* GetTransform()
-	{
-		return _transform;
-	}
+	Transform* GetTransform();
 
 	ObjectType GetType()
 	{
 		return _type;
 	}
 
-	bool IsPendingDestroy() const
-	{
-		return _isPendingDestroy;
-	}
+	bool IsPendingDestroy() const;
 
-	virtual void Destroy()
-	{
-		_isPendingDestroy = true;
-	}
+	virtual void OnCollision(Object* other) {}
+
+	virtual void Destroy();
 };

@@ -15,5 +15,11 @@ void Bullet::Render()
 	_renderer->Render();
 }
 
+void Bullet::OnCollision(Object* other)
+{
+	if (other->GetType() == ObjectType::ENEMY)
+		Destroy();
+}
+
 
 
