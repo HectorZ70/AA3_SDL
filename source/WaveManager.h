@@ -11,16 +11,40 @@
 #include "Spawner.h"
 #include <thread>
 #include <chrono>
+#include <fstream>
 
+#include "dep/inc/xml/rapidxml.hpp"
+#include "dep/inc/xml/rapidxml_iterators.hpp"
+#include "dep/inc/xml/rapidxml_print.hpp"
+#include "dep/inc/xml/rapidxml_utils.hpp"
 
 class WaveManager 
 {
 	int numberOfWave;
 	int anteriorWave;
 	std::vector<Enemy*> enemies;
+	rapidxml::xml_document<> wave;
+	std::ifstream file;
 
 public:
-	WaveManager(int waveNumberStart) { numberOfWave = waveNumberStart; anteriorWave = waveNumberStart - 1; }
+	WaveManager(int waveNumberStart) 
+	{	
+		numberOfWave = waveNumberStart;
+		anteriorWave = waveNumberStart - 1; 
+		file.open("resources/Waves.xml");
+		
+		try
+		{
+			if (!file.is_open())
+			{
+				throw std::exception("Unable to open Waves.xml");
+			}
+		}
+		catch (std::exception c)
+		{
+			std::cout << "Error: " << c.what() << std::endl;
+		}
+	}
 
 	std::vector<Enemy*>& GetEnemyWave() { return enemies; }
 
