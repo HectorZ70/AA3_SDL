@@ -29,7 +29,7 @@ void RenderManager::InitSDL()
 
 void RenderManager::CreateWindowAndRenderer()
 {
-	if (!SDL_CreateWindowAndRenderer("JIJIJIJA", 1920, 1080, SDL_WINDOW_RESIZABLE, &_window, &_renderer))
+	if (!SDL_CreateWindowAndRenderer("MENACE", 1920, 1080, SDL_WINDOW_RESIZABLE, &_window, &_renderer))
 	{
 		throw SDL_GetError;
 	}
