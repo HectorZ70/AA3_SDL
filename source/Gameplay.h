@@ -19,12 +19,14 @@ class Gameplay : public Scene
 {
 	WaveManager* waveManager;
 	std::vector<Enemy*> enemies;
+	Wave* currentWave;
 
 public:
 	Gameplay() = default;
 	void OnEnter() override
 	{
 		waveManager = new WaveManager();
+		currentWave = waveManager->GetWave(0);
 		Border* borderUp = new Border(RM->WINDOW_WIDTH / 2.0f, RM->WINDOW_HEIGHT);
 		Border* borderUp2 = new Border(RM->WINDOW_WIDTH * 1.5f, RM->WINDOW_HEIGHT);
 		Border* borderDown = new Border(RM->WINDOW_WIDTH / 2.0f, 0);
@@ -48,13 +50,14 @@ public:
 		SPAWNER.SpawnObject(borderDown2);
 
 		SPAWNER.SpawnObject(player);
-
+		currentWave->SpawnWave();
 
 		borderUp->Render();
 		borderDown->Render();
 		background->Render();
 		background2->Render();
 		player->Render();
+		currentWave->RenderWave();
 
 	}
 
@@ -63,8 +66,9 @@ public:
 	void Update() {
 		Scene::Update();
 
-
-
+		/*currentWave = waveManager->GetWave(1);
+		currentWave->SpawnWave();
+		currentWave->RenderWave();*/
 		for (Enemy* enemy : enemies)
 		{
 			SPAWNER.SpawnObject(enemy);

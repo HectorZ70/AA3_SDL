@@ -33,7 +33,15 @@ public:
 	{
 		for (int i = 0; i < enemies.size(); i++)
 		{
+			SPAWNER.SpawnObject(enemies[i]);
+		}
+	}
 
+	void RenderWave()
+	{
+		for (int i = 0; i < enemies.size(); i++)
+		{
+			enemies[i]->Render();
 		}
 	}
 
@@ -59,6 +67,11 @@ class WaveManager
 	std::vector<Wave*> waves;
 	
 public:
+	Wave* GetWave(int numberOfWave)
+	{
+		return waves[numberOfWave];
+	}
+
 	WaveManager()
 	{
 		file.open("resources/Waves.xml");

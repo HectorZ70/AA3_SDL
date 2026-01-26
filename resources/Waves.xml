@@ -1,8 +1,10 @@
 <waves>
 	<wave>
+		<Enemy type="Chomper" x="1920" y="700"/>
+
 		<Enemy type="KillerWhale" x="1920" y="300" start="CELLING"/>
-		<Enemy type="VerticalMedusa" x="512" y="1080"/>
-		<Enemy type="HorizontalMedusa" x="1920" y="400"/>
+		<Enemy type="KillerWhale" x="1920" y="500" start="CELLING"/>
+
 	</wave>
 	<wave>
 		<Enemy type="Circler" x="1920" y="500"/>
