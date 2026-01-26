@@ -24,7 +24,7 @@ public:
 	Gameplay() = default;
 	void OnEnter() override
 	{
-		waveManager = new WaveManager(0);
+		waveManager = new WaveManager();
 		Border* borderUp = new Border(RM->WINDOW_WIDTH / 2.0f, RM->WINDOW_HEIGHT);
 		Border* borderUp2 = new Border(RM->WINDOW_WIDTH * 1.5f, RM->WINDOW_HEIGHT);
 		Border* borderDown = new Border(RM->WINDOW_WIDTH / 2.0f, 0);
@@ -62,8 +62,7 @@ public:
 
 	void Update() {
 		Scene::Update();
-		waveManager->SpawnWave();
-		enemies = waveManager->GetEnemyWave();
+
 
 
 		for (Enemy* enemy : enemies)
