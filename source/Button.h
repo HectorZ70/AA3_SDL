@@ -14,6 +14,7 @@ public:
 
 		_transform->position = { xPos, yPos };
 		_transform->scale = { 1.f, 1.f };
+		_transform->size = { 100.f, 100.f };
 
 		_physics->AddCollider(new AABB(_transform->position, _transform->size));
 	}

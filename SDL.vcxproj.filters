@@ -14,7 +14,6 @@
     <ClCompile Include="source\Cannons.cpp" />
     <ClCompile Include="source\Chomper.cpp" />
     <ClCompile Include="source\Circler.cpp" />
-    <ClCompile Include="source\Enemy.cpp" />
     <ClCompile Include="source\Game.cpp" />
     <ClCompile Include="source\HorizontalMedusa.cpp" />
     <ClCompile Include="source\IncreaseValocity.cpp" />

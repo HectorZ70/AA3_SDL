@@ -19,7 +19,7 @@ public:
 		Vector2 ofsset = { 0, 0 };
 		_transform = new Transform();
 		_renderer = new ImageRenderer(_transform, texturePath, ofsset, size);
-		_transform->scale = Vector2(0.3f, 0.3f);
+		_transform->scale = Vector2(.5f, .5f);
 		currentPlayerPosition = positionPlayer;
 		ammunation = *ammunationCannon;
 	}

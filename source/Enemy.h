@@ -39,5 +39,4 @@ public:
 	virtual void Move() {}
 	virtual void EnterInScene(int targetPosX) {}
 	virtual void ExitOutScene() {}
-	virtual void OnCollision(Object* other);
 };

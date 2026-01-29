@@ -33,7 +33,7 @@ public:
 	Turret(Vector2* positionPlayer, PositionRelative upOrDown) : Object() //DO not pass by copy, it will break it
 	{
 		std::string texturePath = "resources/image.png";
-		Vector2 size = { 1000, 1000 };
+		Vector2 size = { 100, 100 };
 		Vector2 ofsset = { 0, 0 };
 		_transform = new Transform();
 		_renderer = new ImageRenderer(_transform, texturePath, ofsset, size);
