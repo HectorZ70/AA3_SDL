@@ -1,20 +1,19 @@
 <waves>
-	<wave number="1">
-		<Enemy type="KillerWhale" x="1920" y="300"/>
-		<Enemy type="VerticalMedusa" x="512" y="1080"/>
-		<Enemy type="HorizontalMedusa" x="1920" y="400"/>
+	<wave>
+		<Enemy type="Chomper" x="1920" y="700"/>
+
+		<Enemy type="KillerWhale" x="1920" y="300" start="CELLING"/>
+		<Enemy type="KillerWhale" x="1920" y="500" start="CELLING"/>
+
 	</wave>
-	<wave number="2">
+	<wave>
 		<Enemy type="Circler" x="1920" y="500"/>
 		<Enemy type="Beholder" x="1920" y="600"/>
 	</wave>
-	<wave number="3">
+	<wave>
 		<Enemy type="Chomper" x="1920" y="700"/>
 		<Enemy type="Bubble" x="1920" y="400"/>
 	</wave>
-	<wave number="4">
-		<Enemy type="Amoeba" x="19020" y="400"/>
-	</wave>
-	<wave number="5">
-	</wave>
+	<Enemy type="Amoeba" x="1920" y="400" copy="false" offsetX="0" offsetY="0"/>
+
 </waves>
