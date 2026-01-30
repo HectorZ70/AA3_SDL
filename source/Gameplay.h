@@ -33,6 +33,9 @@ public:
 		Border* borderDown2 = new Border(RM->WINDOW_WIDTH * 1.5f, 0);
 		Background* background = new Background(RM->WINDOW_WIDTH / 2.0f, RM->WINDOW_HEIGHT / 2.0f);
 		Background* background2 = new Background(RM->WINDOW_WIDTH * 1.5f, RM->WINDOW_HEIGHT / 2.0f);
+
+		Chomper* c = new Chomper(1000, 300);
+
 		Player* player = new Player;
 		background->SetBackground(background2);
 		background2->SetBackground(background);
@@ -48,6 +51,7 @@ public:
 		SPAWNER.SpawnObject(borderUp2);
 		SPAWNER.SpawnObject(borderDown);
 		SPAWNER.SpawnObject(borderDown2);
+		SPAWNER.SpawnObject(c);
 
 		SPAWNER.SpawnObject(player);
 		currentWave->SpawnWave();
@@ -57,6 +61,7 @@ public:
 		background->Render();
 		background2->Render();
 		player->Render();
+		c->Render();
 		currentWave->RenderWave();
 
 	}

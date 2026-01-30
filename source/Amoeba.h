@@ -30,15 +30,12 @@ public:
 		Vector2 size = { 1000, 1000 };
 		Vector2 offset = { 0, 0 };
 
-		// USAMOS el Transform heredado
 		_renderer = new ImageRenderer(_transform, texturePath, offset, size);
 
 		_transform->position = { posX, posY };
-		_transform->scale = { .5f, .5f };
+		_transform->scale = Vector2(.5f, .5f);
 		_transform->rotation = 0.f;
-		_transform->size = size;
 
-		// USAMOS el RigidBody heredado
 		_physics->AddCollider(new AABB(
 			_transform->position,
 			_transform->size * _transform->scale
